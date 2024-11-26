@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Cloudexe Demo Gallery</title>
+		<link rel="icon" type="image/x-icon" href="/images/logo.ico">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+		<script>
+			function playvid(vidid) {
+				document.getElementById(vidid).style.display="block";
+				document.getElementById(vidid).play();
+			}
+		</script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="innerleft" style="width:10%">
+					<img class="image left" src="images/logo.svg" style="height: 40px;margin-top:5px;margin-left:20px" />
+				</div>
+				<div class="inner" style="width:90%">
+					<nav>
+						<ul>
+							<li><a href="/#intro">Home</a></li>
+							<li><a href="/#technology">Technology</a></li>
+							<li><a href="/gallery.html">Demos</a></li>
+							<li><a href="/#features">Features</a></li>
+							<li><a href="/#pricing">Pricing</a></li>
+							<li><a href="/#about">About</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+					<section class="wrapper style1-alt fade-up">
+						<div class="inner">
+						    <h3>LLM training with Cloudexe</h3>
+							<p>
+								<ul>
+								<li>This demo launches a LLM training workload from an AWS g4dn.xlarge instance.</li>
+								<li>Training data, model weights and checkpoints all refer to local filesystem on the AWS server.</li>
+								<li>Notice how there was zero setup needed on the remote server.</li>
+								</ul>
+							</p>
+							<a onclick='playvid("axolotl")' style="color:#365bda;" >Play video</a>
+							<video id="axolotl" style="display:none;" width="800" height="600" controls>
+								<source src="images/axolotl-training-demo.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+							</video>
+						</div>
+					</section>
+	
+					<section class="wrapper style1-alt fade-up">
+						<div class="inner">
+						    <h3>Imagenet (resnet50) training with Cloudexe</h3>
+							<p>
+								<ul>
+								<li>This demo launches an Imagenet training workload from an AWS g4dn.xlarge instance.</li>
+								<li>Training data, model weights and checkpoints all refer to local filesystem on the AWS server.</li>
+								<li>Notice how there was zero setup needed on the remote server.</li>
+								</ul>
+							</p>
+							<a onclick='playvid("imagenet")' style="color:#365bda;" >Play video</a>
+							<video id="imagenet" style="display:none;" width="800" height="600" controls>
+								<source src="images/imagenet-training-demo.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+							</video>
+						</div>
+					</section>
+
+					<section class="wrapper style1-alt fade-up">
+						<div class="inner">
+						    <h3>Llama.cpp inference with Cloudexe</h3>
+							<p>
+								<ul>
+								<li>This demo launches Llama.cpp inference workload from an AWS g4dn.xlarge instance.</li>
+								<li>Model weights refer to local filesystem on the AWS server.</li>
+								<li>Notice how there was zero setup needed on the remote server.</li>
+								</ul>
+							</p>
+							<a onclick='playvid("llamacpp")' style="color:#365bda;" >Play video</a>
+							<video id="llamacpp" style="display:none;" width="800" height="600" controls>
+								<source src="images/llama.cpp-inference-demo.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+							</video>
+						</div>
+					</section>
+
+					<section class="wrapper style1-alt fade-up">
+						<div class="inner">
+						    <h3>Jupyter-notebook with Cloudexe</h3>
+							<p>
+								<ul>
+								<li>This demo launches an interactive Jupyter notebook workload from an AWS g4dn.xlarge instance.</li>
+								<li>Directory and code files all refer to local filesystem on the AWS server.</li>
+								<li>Notice how there was zero setup needed on the remote server.</li>
+								</ul>
+							</p>
+							<a onclick='playvid("jupyter")' style="color:#365bda;" >Play video</a>
+							<video id="jupyter" style="display:none;" width="800" height="600" controls>
+								<source src="images/jupyter-notebook-cloudexe.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+							</video>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Cloudexe Inc. All rights reserved.</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
