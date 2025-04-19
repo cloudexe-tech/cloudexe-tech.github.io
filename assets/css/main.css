@@ -183,8 +183,7 @@ input, select, textarea {
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.5em 0;
-		font-family: 'Space Grotesk', sans-serif;
-		font-family: "Space Grotesk", serif;
+		font-family: "Space Grotesk", sans-serif;
 		font-optical-sizing: auto;
 	}
 
