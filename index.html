@@ -18,16 +18,16 @@
 
 		<!-- Sidebar -->
 			<section id="sidebar">
-				<div class="innerleft" style="width:10%">
-					<img class="image left" src="images/Orange_Wordmark.svg" style="height: 40px;margin-top:5px;margin-left:20px" />
+				<div class="innerleft">
+					<img class="image left" src="images/Orange_Wordmark.svg" />
 				</div>
-				<div class="inner" style="width:90%">
+				<div class="inner">
 					<nav>
 						<ul>
 							<li><a href="/#intro">Home</a></li>
-							<li><a href="/#technology">Technology</a></li>
-							<li><a href="/gallery.html">Demos</a></li>
-							<li><a href="/#products">Products</a></li>
+							<li><a href="/#why">Why</a></li>
+							<li><a href="/#what">What</a></li>
+							<li><a href="/#how">How</a></li>
 							<li><a href="/#pricing">Pricing</a></li>
 							<li><a href="/#about">About</a></li>
 						</ul>
@@ -42,33 +42,25 @@
 					<section id="intro" class="wrapper style1-alt fullscreen fade-up">
 						<div class="inner">
 							<div class="twopanemain">
-								<section style="flex: 0 0 50%;margin-top:-5%">
-									<h1 >Unshackle your AI infra with Cloudexe's <a style="color:#fc8147">HW/SW disaggregation</a> tech</h1>
+								<section class="hero-left">
+									<h1 class="hero-title">The GPU cloud optimized for <a>R&D teams</a> who don't like to wait</h1>
 									<p></p>
 									<p></p>
-									<p style="color:#ffffff" >
-										Cloudexe tech <a style="color:#fc8147">decouples</a>
-										GPU hardware from the execution environment, marrying the
-										economics of on-prem/neo-cloud GPUs with
-										maturity of hyperscaler infrastructure.
+									<p class="hero-text">
+										Built for researchers in academia and industry
+										whose needs aren't met by hyperscalers, local clusters, or neo-clouds. 
+										<ul class="hero-list">
+											<li>Instant GPU access</li>
+											<li>Flexible and ultra-low pricing</li>
+											<li>Intuitive UX</li>
+										</ul>
 									</p>
-									<p style="color:#ffffff" >
-										Now you can use GPUs from anywhere,
-										be it from other <a style="color:#fc8147">hyperscalers, neo-clouds, or on-prem</a>  clusters,
-										right inside your existing infrastructure, be it on
-										<a style="color:#fc8147">hyperscaler</a> public cloud 
-										or <a style="color:#fc8147">on-prem</a>, 
-										with <a style="color:#fc8147">zero </a>integration work</i>
-									</p>
-									<p></p>
-									<p></p>
-									<p></p>
-									<p style="margin-top:10%;">
-										<a href="https://beta.cloudexe.tech" class="button centered">Sign up for free trial</a>
+									<p class="hero-button-wrapper">
+										<a href="https://forms.microsoft.com/r/B7sdb6JDyZ" class="button centered hero-button">Request Access</a>
 									</p>
 								</section>
-								<section style="flex: 0 0 50%;margin-top:-5%">
-									<lottie-player src="/images/heroanim.json" background="transparent"  speed="1" style="margin-bottom:10%;" loop autoplay></lottie-player>
+								<section class="hero-right">
+									<lottie-player src="/images/heroanim.json" background="transparent"  speed="1" class="lottie-hero" loop autoplay></lottie-player>
 								</section>
 
 							</div>
@@ -76,156 +68,185 @@
 					</section>
 
 				<!-- Why -->
-					<section id="technology" class="wrapper style1-alt fade-up">
+					<section id="why" class="wrapper style1-alt fade-up">
 						<div class="inner">
-							<h2>Technology</h2>
-							<p class="">
-								Cloudexe brings together innovative technology, an ecosystem and a business model.
-								Cloudexe's data plane <a><b>decouples software environment from physical hardware</b></a>, allowing movement of workloads out of hyperscaler cloud to other providers
-								with <a><b>zero integration</b></a> work. 
-								Cloudexe's control plane aka <a><b>realtime workload matchmaking</a></b> finds the right GPU 
-								provider for any workload just-in-time, enabling new ways of paying for compute.
-								Cloudexe's <a><b>globe-spanning partner network</b></a> brings plentiful and economical
-								GPU supply anywhere.
+							<h2 class="section-header">Why DevCloud?</h2>
+							<div class="section-underline"></div>
+							<p class="intro-text">
+								Research teams face unique challenges that traditional cloud platforms just can't address. The demands of small, fast-moving teams require a tailored solution.
 							</p>
-							<p>
-								Using Cloudexe is easy.
-								<ol>
-									<li>Download and setup <code>cloudexe</code> client.</li>
-									<li>Define your workload GPU needs in a <code>config.json</code>.</li>
-									<li>Launch your workload command with <code>cloudexe</code> as the launcher.</li>
-								</ol>
-							</p>
-							<lottie-player src="/images/product_architecture.json" background="transparent"  speed="0.75" style="width:50%;" loop controls autoplay></lottie-player>
-						    <h2> Zero-integration UX </h2>
-							<p>
-								Cloudexe does away with the chores of remote login, software install, file updates,
-								dataset uploads/downloads, model weights uploads/downloads, code syncing, OS updates, credentials management, port forwards, network tunneling, server lifecycle management.
-							</p>
-							<p class="">
-								Workload executes in the context of the client machine on which it is launched, including
-								the filesystem, network, devices, IPC, etc.
-							</p>
-							<p class="">
-								That means less time wrangling infra, and more time for AI.
-							</p>
-							<h2> See it in action </h2>
-							<a href="#" class="image"><img src="images/demo.gif" alt="" style="width: 75%; padding-bottom:7%;" /></a>
-							<div>
-							<h2> Demos </h2>
-							<p> Cloudexe works seamlessly for any GPU AI/ML workload.
-								<a href="/gallery.html" ><h4>See more demos.</h4></a> </p>
-							</div>
-						</div>
-					</section>
-	
 
-				<!-- Two -->
-					<section id="features" class="wrapper style2-alt fade-up">
-						<div class="inner">
-							<h2>Platform features</h2>
-							<p class="">
-								Cloudexe platform has following salient features. The platform can be leveraged in multiple ways.
-								<ul>
-									<li>Cloudexe Inc. has SOC-2 TypeII certification</li>
-									<li>Connection with remote GPU server is protected with SOTA encryption technology</li>
-									<li>Cloudexe technology is vendor/arch agnostic. It works the same for NVIDIA, AMD and others.</li>
-									<li>The technology works well for training, fine-tuning, inference, and classic ML workloads.</li>
-									<li>The technology integrates seamlessly with Kubernetes and Slurm.</li>
-									<li>The technology is Enterprise ready with features like API integrations, SSO, RBAC, HA, Dashboards/Alerts and more.</li>
-								</ul>
-							</p>
-							<h3>Products</h3>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Developer Cloud</h3>
-									<ul>
-										<li>GPU instances accessible via SSH and browser</li>
-										<li>No-setup, no-changes access to variety of GPUs from the same instance</li>
-										<li>50%-80% cost savings in a no-commitment, all-inclusive GPU subscription</li>
-										<li>Best for R&D teams with unpredictable computing needs</li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-cloud"></span>
-									<h3>Virtual GPU Cloud</h3>
-									<ul>
-										<li>Layer to consolidate distributed GPUs into a virtual pool</li>
-										<li>No-setup, no integration way to augment GPU fleet just-in-time</li>
-										<li>50%-80% cost savings and 1.5x to 2x utilization improvement</li>
-										<li>Best for customers operating complex at-scale production infrastructure</li>
-									</ul>
-								</section>
-							</div>
-							</div>
-							<div>
+							<h3 class="subheader">Challenges with Current Solutions:</h3>
+							<ul class="challenge-list">
+								<li class="challenge-item"><strong>Levels of abstraction</strong> (e.g. training-as-a-service) don't suit research workflows.</li>
+								<li class="challenge-item"><strong>Frequent data movement</strong> like uploading, downloading, and syncing code or datasets with each change disrupts momentum.</li>
+								<li class="challenge-item"><strong>Difficulty of debugging</strong> on remote/opaque clusters is time-consuming and frustrating.</li>
+								<li class="challenge-item"><strong>Dependency capture</strong> (and packaging) of workload for remote execution is burdensome.</li>
+								<li class="challenge-item"><strong>Overburdened researchers</strong> without a dedicated infra team end up acting as de facto admins.</li>
+								<li class="challenge-item"><strong>Complex hyperscaler UX</strong> is designed for IT pros, not for the needs of researchers.</li>
+								<li class="challenge-item"><strong>Bare-bone UI</strong> offered by neoclouds doesn't scale beyond solo practitioners.</li>
+								<li class="challenge-item"><strong>Opaque and consumption-based pricing</strong> leads to surprising cost overruns.</li>
+								<li class="challenge-item"><strong>Oversubscribed clusters</strong> directly jeopardize paper deadlines or customer deliverables.</li>
+							</ul>
 						</div>
 					</section>
 
-				<!-- Two -->
-					<section id="pricing" class="wrapper style1-alt fade-up">
+				<!-- what -->
+					<section id="what" class="wrapper style2-alt fade-up">
 						<div class="inner">
-							<h2>Pricing</h2>
-							<table class="alt">
-								<thead>
-									<tr>
-										<th>GPU</th>
-										<th>Pay-per-use</th>
-										<th>3-month commit</th>
-										<th>Location</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td> H100-80GB-SXM </td>
-										<td> $2.00/hr </td>
-										<td> $1.00/hr </td>
-										<td> US-West, US-East, CA-Central</td>
-									</tr>
-									<tr>
-										<td> H200-144GB </td>
-										<td> $3.00/hr </td>
-										<td> $2.00/hr </td>
-										<td> US-West, US-East, CA-Central</td>
-									</tr>
-									<tr>
-										<td> A40 48GB </td>
-										<td> $0.80/hr </td>
-										<td> $0.50/hr </td>
-										<td> US-West, US-East, CA-Central</td>
-									</tr>
-								</tbody>
-							</table>
-							<p class="">
-								We continuously add more supplier-partners to our network.
-								We also offer generous trial periods, and free credits for
-								educational and research institutions. Just ask.
-								Please reach us at <b style="color:#ffffff">info@cloudexe.tech</b> for details.
-							</p>
-							<p class="centered" style="text-align:center;">
-								<a href="https://beta.cloudexe.tech" class="button centered">Sign up for free trial</a>
-							</p>
+							<h2 class="section-header">What is DevCloud?</h2>
+							<div class="section-underline"></div>
+
+							<p class="intro-text-large">DevCloud is the first end-to-end cloud platform specifically designed for the research community, offering an optimized experience for both academia and industry.</p>
+
+							<h3 class="subheader">Key Features</h3>
+							<ul class="feature-grid">
+								<li class="feature-card"><strong class="feature-title">Seamless Workflow</strong> No friction, no need to capture dependencies or manage uploads/downloads. Debugging feels local, just like on your workstation.</li>
+								<li class="feature-card"><strong class="feature-title">Easy Admin UI</strong>Onboard users, provision compute resources, assign quotas, monitor usage, and prioritize projects with ease.</li>
+								<li class="feature-card"><strong class="feature-title">Predictable Pricing</strong>Transparent pricing that balances flexibility and predictability, with the lowest effective cost in the market.</li>
+								<li class="feature-card"><strong class="feature-title">Unmatched Availability</strong>Never wait to access a GPU. Get the resources you need, when you need them.</li>
+								<li class="feature-card"><strong class="feature-title">Security First</strong>Built on a SOC-II compliant platform for the highest levels of security.</li>
+								<li class="feature-card"><strong class="feature-title">Hybrid Deployment</strong>Run workloads on your own servers, or on our servers, or on a mix of both.</li>
+							</ul>
+
+							 
+							<h3 class="subheader">Who is this for?</h3>
+							<p class="intro-text-large">If you are managing a team of researchers or developers who use GPUs in many different ways (training models, running simulations, classic ML workloads, etc.), this product is for you.</p>
+							<div class="image-container">
+								<img class="image image-styled" width="800" src="/images/devcloud_sweet_spot.png" />
+							</div>
+						</div>
+					</section>
+
+				<!-- how -->
+					<section id="how" class="wrapper style1-alt fade-up">
+						<div class="inner">
+							<h2 class="section-header">How does DevCloud work?</h2>
+							<div class="section-underline"></div>
+
+							<p class="intro-text">DevCloud's unique architecture is based on patented <em><strong class="accent-orange">Hardware/Software Disaggregation</strong></em>,
+								which unbundles the "server" concept into separate components:</p>
+
+							<div class="disaggregation-container">
+								<div class="disaggregation-box"><strong class="disaggregation-title">Software</strong>OS, libraries, frameworks, filesystem, env vars, network routes, etc.</div>
+								<div class="disaggregation-plus">+</div>
+								<div class="disaggregation-box"><strong class="disaggregation-title">Hardware</strong>CPU, GPU, storage, NIC, etc.</div>
+							</div>
+
+							<p class="body-text">This disaggregation enables the dynamic pairing of software environments with hardware over
+								ultra-low-latency networks, improving flexibility, resource utilization, and cost efficiency.</p>
+
+							<div class="lottie-container">
+								<lottie-player src="/images/product_architecture.json" background="transparent"  speed="1.25" class="lottie-arch" loop autoplay></lottie-player>
+							</div>
+
+							<h4 class="subheader-large">Structural Advantages of DevCloud</h4>
+							<div class="table-wrapper">
+								<table border="1" class="advantages-table">
+									<thead>
+										<tr>
+											<th><strong>Architectural Change</strong></th>
+											<th><strong>User Implication</strong></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>No explicit server acquisition/release (GPUs only used during workload execution)</td>
+											<td>3x improved GPU fleet utilization and reduced customer costs.</td>
+										</tr>
+										<tr>
+											<td>No setup required for GPU servers (access to multiple neocloud partners)</td>
+											<td>Better GPU availability and further cost reduction.</td>
+										</tr>
+										<tr>
+											<td>No need to capture dependencies or sync uploads/downloads</td>
+											<td>Faster iterations and debugging, leading to improved user experience.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</section>
+
+				<!-- pricing -->
+					<section id="pricing" class="wrapper style2-alt fade-up">
+						<div class="inner">
+							<h2 class="section-header">Pricing</h2>
+							<div class="section-underline section-underline-large"></div>
+							<div class="pricing-grid">
+								<div class="pricing-card">
+									<h4 class="pricing-card-title">Subscription</h4>
+									<ul class="pricing-list">
+										<li>&bull; Choose a time-based subscription (1 month to 1 year) for one or more GPUs, with better discounts for longer commitments.</li>
+										<li>&bull; The subscription is shared across your entire organization, and pricing varies based on the GPU generation and model.</li>
+										<li>&bull; No limit on use of subscribed GPUs.</li>
+									</ul>
+								</div>
+								<div class="pricing-card">
+									<h4 class="pricing-card-title">Burst access</h4>
+									<ul class="pricing-list">
+										<li>&bull; Access additional GPUs on-demand without reserving upfront.</li>
+										<li>&bull; Billed by GPU-hours, with clear pricing provided at the time of job execution. Admins can control and limit burst GPU usage.</li>
+									</ul>
+								</div>
+								<div class="pricing-card">
+									<h4 class="pricing-card-title">Storage</h4>
+									<ul class="pricing-list">
+										<li>&bull; Multi-terabyte storage is included with your GPU subscription. Additional storage is available at competitive prices, and it's shared across all team members.</li>
+									</ul>
+								</div>
+								<div class="pricing-card">
+									<h4 class="pricing-card-title">Payment options</h4>
+									<ul class="pricing-list">
+										<li>&bull; We offer both credit card payments (in USD) and invoice billing for larger institutions.</li>
+										<li>&bull; We can work with your institution to be onboarded as an approved vendor, and help with your grant proposals.</li>
+									</ul>
+								</div>
+								<div class="pricing-card">
+									<h4 class="pricing-card-title">Free trials</h4>
+									<ul class="pricing-list">
+										<li>&bull; Extended free trials are available to ensure your workloads run smoothly before committing to a subscription.</li>
+									</ul>
+								</div>
+								<div class="pricing-card">
+									<h4 class="pricing-card-title">Sample pricing</h4>
+									<ul class="pricing-list">
+										<li>&bull; $600/H100/Month.</li>
+										<li>&bull; $866/H200/Month.</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</section>
 
 				<!-- Three -->
-					<section id="about" class="wrapper style2-alt fade-up">
+					<section id="about" class="wrapper style1-alt fade-up">
 						<div class="inner">
-							<h2>About us</h2>
-							<p>
-								We are a seasoned  team of elite engineers and entrepreneurs with
-								deep experience in building GPU cloud infrastructure at
-								companies like Intel, NVIDIA, Google and others.
-								We are based in Silicon Valley.
-							</p>
-							<h3>Investors</h3>
-								<img class="image" style="height: 100px;margin-top:5px;margin-left:20px;background-color:rgb(209, 208, 208);" src="https://images.squarespace-cdn.com/content/v1/602fe8eef3f6185d8768e787/1619484854465-4HYD8PML6WHXW3KPLKP4/Artboard+1.png?format=1500w" />
+							<h2 class="section-header">About us</h2>
+							<div class="section-underline"></div>
+
+    						<p class="intro-text-large">We are a team of experienced engineers and entrepreneurs with deep expertise
+								in building GPU cloud infrastructure at leading companies like Intel, NVIDIA, Google, and others.
+								We shipped the first CUDA GPU at NVIDIA, the first Xe GPU at Intel, and built the core tech for Google's Stadia Cloud Gaming service.
+								Based in Silicon Valley, we are passionate about solving the unique challenges faced by researchers in academia and industry.</p>
+
+							<div class="about-grid">
+								<div class="about-card">
+									<h4 class="about-card-title">Customers</h4>
+									<p class="about-card-text">DevCloud is trusted by world-leading research institutions and AI-driven companies.
+										Stay tuned for testimonials and customer logos.</p>
+								</div>
+								<div class="about-card">
+									<h4 class="about-card-title">Contact Us</h4>
+									<p class="about-card-text">For corporate inquiries, reach us at <strong>info@cloudexe.tech</strong>.</p>
+								</div>
+							</div>
+
+							<h4 class="subheader-large">Investors</h4>
+							<div class="investor-container">
+								<img class="image investor-logo" src="https://images.squarespace-cdn.com/content/v1/602fe8eef3f6185d8768e787/1619484854465-4HYD8PML6WHXW3KPLKP4/Artboard+1.png?format=1500w" />
+							</div>
 							<p></p>
-							<h3>Contact</h3>
-							<p>
-								Reach us at <a href="mailto:info@cloudexe.tech"><b style="color:#ffffff">info@cloudexe.tech</b></a> for corporate inquiries.
-							</p>
 						</div>
 					</section>
 
@@ -235,7 +256,7 @@
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; 2024-2025 Cloudexe Inc. All rights reserved.</li>
+						<li>&copy; 2024-2026 Cloudexe Inc. All rights reserved.</li>
 					</ul>
 				</div>
 			</footer>
