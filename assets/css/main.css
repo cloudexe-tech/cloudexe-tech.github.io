@@ -4238,6 +4238,9 @@ input, select, textarea {
 	border-radius: 15px;
 	box-shadow: 0 10px 40px rgba(0,0,0,0.15);
 	transition: transform 0.3s ease;
+	width: 100%;
+	max-width: 640px;
+	height: auto;
 }
 
 .image-styled:hover {
