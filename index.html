@@ -1,346 +1,1210 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Cloudexe GPU Cloud</title>
-		<link rel="icon" type="image/x-icon" href="/images/logo.ico">
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/satoshi">
-		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloudexe — GPU Cloud for Research Labs</title>
+  <link rel="icon" type="image/x-icon" href="/images/logo.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
 
-	</head>
-	<body class="is-preload">
+    :root {
+      --orange:   #F26419;
+      --orange-l: #FEF0E7;
+      --orange-b: #FDDCC9;
+      --ink:      #111110;
+      --mid:      #5A5750;
+      --dim:      #9E9B96;
+      --line:     #E8E5E0;
+      --bg:       #FAFAF8;
+      --white:    #FFFFFF;
+      --r:        10px;
+    }
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="innerleft">
-					<img class="image left" src="images/Orange_Wordmark.svg" />
-				</div>
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="/#intro">Home</a></li>
-							<li><a href="/#why">Why</a></li>
-							<li><a href="/#what">What</a></li>
-							<li><a href="/#how">How</a></li>
-							<li><a href="/#pricing">Pricing</a></li>
-							<li><a href="/#about">About</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-				<!-- intro -->
-					<section id="intro" class="wrapper style1-alt fullscreen fade-up">
-						<div class="inner">
-							<div class="twopanemain">
-								<section class="hero-left">
-									<h1 class="hero-title">The GPU cloud optimized for <a>R&D teams</a> who refuse to wait</h1>
-									<p></p>
-									<p></p>
-									<p class="hero-text">
-										Built for researchers in academia and industry
-										whose needs aren't met by hyperscalers, local clusters, or neo-clouds. 
-										<ul class="hero-list">
-											<li>Instant GPU access</li>
-											<li>Flexible and ultra-low pricing</li>
-											<li>Intuitive UX</li>
-										</ul>
-									</p>
-									<p class="hero-button-wrapper">
-										<a href="https://forms.microsoft.com/r/B7sdb6JDyZ" class="button centered hero-button">Request Access</a>
-									</p>
-								</section>
-								<section class="hero-right">
-									<lottie-player src="/images/heroanim.json" background="transparent"  speed="1" class="lottie-hero" loop autoplay></lottie-player>
-								</section>
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 32px; }
 
-							</div>
-							<div class="customer-ribbon-wrapper">
-								<div class="customer-ribbon">
-									<div class="customer-ribbon-track">
-										<div class="customer-item">
-											<img class="customer-logo" src="https://mma.prnewswire.com/media/1800494/DevRev_Logo.jpg" alt="DevRev Inc." />
-											<div class="customer-item-content">
-												<h4 class="customer-name">DevRev Inc.</h4>
-												<p class="customer-testimonial">"We switched due to their competitive pricing and reliability" - Anshu Avinash, Tech Dir, AI and Search</p>
-											</div>
-										</div>
-										<div class="customer-item">
-											<img class="customer-logo" src="https://pbs.twimg.com/profile_images/1787951527833042944/EsPYONot.jpg" alt="Collinear Inc" />
-											<div class="customer-item-content">
-												<h4 class="customer-name">Collinear.ai</h4>
-												<p class="customer-testimonial">"Love Cloudexe for their pricing and stellar support!" - Soumyadeep Bakshi, Co-founder</p>
-											</div>
-										</div>
-										<div class="customer-item">
-											<img class="customer-logo" src="https://www.cmu.edu/brand/brand-guidelines/images/lettermark-600x600.jpg" alt="Carnegie Mellon University" />
-											<div class="customer-item-content">
-												<h4 class="customer-name">CMU Robotics Institute</h4>
-												<p class="customer-testimonial">"Deployments become effortless with intuitive interface." - Prof. Fernando De La Torre</p>
-											</div>
-										</div>
-										<div class="customer-item">
-											<img class="customer-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/BITS_Pilani-Logo.svg/1200px-BITS_Pilani-Logo.svg.png" alt="BITS Pilani, India" />
-											<div class="customer-item-content">
-												<h4 class="customer-name">BITS Pilani, India</h4>
-												<p class="customer-testimonial">"Ideal UX for managing multi-campus education/research infrastructure" - Prof. Snehanshu Saha</p>
-											</div>
-										</div>
-										<div class="customer-item">
-											<img class="customer-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Arizona_State_University_seal.svg/1200px-Arizona_State_University_seal.svg.png" alt="Arizona State University" />
-											<div class="customer-item-content">
-												<h4 class="customer-name">Arizona State University</h4>
-												<p class="customer-testimonial">"Runtime abstraction is clean...provided excellent support throughout..." - Dr. Rolando Garcia, Presidential Fellow</p>
-											</div>
-										</div>
-										<!-- Duplicate for seamless loop -->
-										<div class="customer-item">
-											<img class="customer-logo" src="https://mma.prnewswire.com/media/1800494/DevRev_Logo.jpg" alt="DevRev Inc." />
-											<div class="customer-item-content">
-												<h4 class="customer-name">DevRev Inc.</h4>
-												<p class="customer-testimonial">"We switched due to their competitive pricing and reliability" - Anshu Avinash, Tech Dir, AI and Search</p>
-											</div>
-										</div>
-										<div class="customer-item">
-											<img class="customer-logo" src="https://pbs.twimg.com/profile_images/1787951527833042944/EsPYONot.jpg" alt="Collinear Inc" />
-											<div class="customer-item-content">
-												<h4 class="customer-name">Collinear.ai</h4>
-												<p class="customer-testimonial">"Love Cloudexe for their pricing and stellar support!" - Soumyadeep Bakshi, Co-founder</p>
-											</div>
-										</div>
-										<div class="customer-item">
-											<img class="customer-logo" src="https://www.cmu.edu/brand/brand-guidelines/images/lettermark-600x600.jpg" alt="Carnegie Mellon University" />
-											<div class="customer-item-content">
-												<h4 class="customer-name">CMU Robotics Institute</h4>
-												<p class="customer-testimonial">"Deployments become effortless with intuitive interface." - Prof. Fernando De La Torre</p>
-											</div>
-										</div>
-										<div class="customer-item">
-											<img class="customer-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/BITS_Pilani-Logo.svg/1200px-BITS_Pilani-Logo.svg.png" alt="BITS Pilani, India" />
-											<div class="customer-item-content">
-												<h4 class="customer-name">BITS Pilani, India</h4>
-												<p class="customer-testimonial">"Ideal UX for managing multi-campuseducation/research infrastructure" - Prof. Snehanshu Saha</p>
-											</div>
-										</div>
-										<div class="customer-item">
-											<img class="customer-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Arizona_State_University_seal.svg/1200px-Arizona_State_University_seal.svg.png" alt="Arizona State University" />
-											<div class="customer-item-content">
-												<h4 class="customer-name">Arizona State University</h4>
-												<p class="customer-testimonial">"Runtime abstraction is clean...provided excellent support throughout..." - Dr. Rolando Garcia, Presidential Fellow</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 99;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
 
-				<!-- Why -->
-					<section id="why" class="wrapper style1-alt fade-up">
-						<div class="inner">
-							<h2 class="section-header">Why DevCloud?</h2>
-							<div class="section-underline"></div>
-							<p class="intro-text">
-								Research teams face unique challenges that traditional cloud platforms just can't address. The demands of small, fast-moving teams require a tailored solution.
-							</p>
+    .nav-row {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
 
-							<h3 class="subheader">Challenges with Current Solutions:</h3>
-							<ul class="challenge-list">
-								<li class="challenge-item"><strong>Levels of abstraction</strong> (e.g. training-as-a-service) aren't appropriate for research workflows.</li>
-								<li class="challenge-item"><strong>Constant data movement</strong> like uploading, downloading, and syncing code or datasets disrupts momentum.</li>
-								<li class="challenge-item"><strong>Difficulty of debugging</strong> on remote/opaque clusters is time-consuming and frustrating.</li>
-								<li class="challenge-item"><strong>Dependency capture</strong> (and packaging) of workload for remote execution is burdensome.</li>
-								<li class="challenge-item"><strong>Overburdened researchers</strong> without a dedicated infra team end up acting as de facto admins.</li>
-								<li class="challenge-item"><strong>Complex hyperscaler UX</strong> is designed for IT pros, not for the needs of researchers.</li>
-								<li class="challenge-item"><strong>Bare-bone UI</strong> offered by neoclouds doesn't scale beyond solo practitioners.</li>
-								<li class="challenge-item"><strong>Opaque and consumption-based pricing</strong> leads to surprising cost overruns.</li>
-								<li class="challenge-item"><strong>Oversubscribed clusters</strong> put paper deadlines or customer deliverables at risk.</li>
-							</ul>
-						</div>
-					</section>
+    .logo {
+      display: flex; align-items: center;
+      text-decoration: none; color: var(--ink);
+    }
 
-				<!-- what -->
-					<section id="what" class="wrapper style2-alt fade-up">
-						<div class="inner">
-							<h2 class="section-header">What is DevCloud?</h2>
-							<div class="section-underline"></div>
+    .logo img { height: 28px; }
 
-							<p class="intro-text-large">DevCloud is the first end-to-end cloud platform specifically designed for the research community, offering an optimized experience for both academia and industry.</p>
+    .logo-name {
+      font-size: 20px; font-weight: 800;
+      letter-spacing: -.5px;
+      color: var(--ink);
+    }
 
-							<h3 class="subheader">Key Features</h3>
-							<ul class="feature-grid">
-								<li class="feature-card"><strong class="feature-title">Seamless Workflow</strong>Stay in the flow with local-like development and debugging. Say goodbye to dependency capture or syncing code/data.</li>
-								<li class="feature-card"><strong class="feature-title">Easy Admin UI</strong>Onboard users, provision compute resources, assign quotas, monitor usage, and prioritize projects with ease.</li>
-								<li class="feature-card"><strong class="feature-title">Predictable Pricing</strong>Never run into surprising cost overrun, even while using burst resources.</li>
-								<li class="feature-card"><strong class="feature-title">Unmatched Availability</strong>Never wait to access a GPU. Get the resources you need, when you need them.</li>
-								<li class="feature-card"><strong class="feature-title">Security First</strong>Rest easy about data security with the SOC-II compliant base platform.</li>
-								<li class="feature-card"><strong class="feature-title">Hybrid Deployment</strong>Run workloads on your own servers, or on our servers, or on a mix of both.</li>
-							</ul>
+    .nav-links {
+      display: flex; align-items: center; gap: 24px;
+      list-style: none;
+    }
 
-							 
-							<h3 class="subheader">Who is this for?</h3>
-							<p class="intro-text-large">If you are managing a team of researchers or developers who use GPUs in many different ways (training models, running simulations, classic ML workloads, etc.), this product is for you.</p>
-							<div class="image-container">
-								<img class="image image-styled" src="/images/devcloud_sweet_spot.png" alt="DevCloud target audience" />
-							</div>
-						</div>
-					</section>
+    .nav-links a {
+      font-size: 13.5px; font-weight: 500;
+      color: var(--mid); text-decoration: none;
+      transition: color .14s;
+    }
+    .nav-links a:hover { color: var(--ink); }
 
-				<!-- how -->
-					<section id="how" class="wrapper style1-alt fade-up">
-						<div class="inner">
-							<h2 class="section-header">How does DevCloud work?</h2>
-							<div class="section-underline"></div>
+    .btn {
+      display: inline-flex; align-items: center;
+      font-family: inherit; font-size: 13.5px; font-weight: 600;
+      padding: 9px 20px; border-radius: var(--r);
+      border: none; cursor: pointer; text-decoration: none;
+      transition: all .14s;
+    }
 
-							<p class="intro-text">DevCloud's unique architecture is based on patented <em><strong class="accent-orange">Hardware/Software Disaggregation</strong></em>,
-								which unbundles the "server" concept into separate components:</p>
+    .btn-orange {
+      background: var(--orange); color: #fff;
+      box-shadow: 0 1px 4px rgba(242,100,25,.28);
+    }
+    .btn-orange:hover {
+      background: #D9580F;
+      box-shadow: 0 4px 16px rgba(242,100,25,.32);
+      transform: translateY(-1px);
+    }
 
-							<div class="disaggregation-container">
-								<div class="disaggregation-box"><strong class="disaggregation-title">Software</strong>OS, libraries, frameworks, filesystem, env vars, network routes, etc.</div>
-								<div class="disaggregation-plus">+</div>
-								<div class="disaggregation-box"><strong class="disaggregation-title">Hardware</strong>CPU, GPU, storage, NIC, etc.</div>
-							</div>
+    .btn-ghost {
+      background: transparent; color: var(--mid);
+      border: 1.5px solid var(--line);
+    }
+    .btn-ghost:hover { border-color: #C8C4BC; color: var(--ink); }
 
-							<p class="body-text">This disaggregation enables the dynamic pairing of software environments with hardware over
-								ultra-low-latency networks, improving flexibility, resource utilization, and cost efficiency.</p>
+    /* ── Hero ── */
+    .hero {
+      padding: 96px 0 88px;
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+    }
 
-							<div class="lottie-container">
-								<lottie-player src="/images/product_architecture.json" background="transparent"  speed="1.25" class="lottie-arch" loop autoplay></lottie-player>
-							</div>
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
 
-							<h4 class="subheader-large">Structural Advantages of DevCloud</h4>
-							<div class="table-wrapper">
-								<table border="1" class="advantages-table">
-									<thead>
-										<tr>
-											<th><strong>Architectural Change</strong></th>
-											<th><strong>User Implication</strong></th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>No explicit server acquisition/release (GPUs only used during workload execution)</td>
-											<td>Improved GPU fleet utilization and reduced customer costs.</td>
-										</tr>
-										<tr>
-											<td>No setup required for GPU servers (access to multiple neocloud partners)</td>
-											<td>Better GPU availability and further cost reduction.</td>
-										</tr>
-										<tr>
-											<td>No need to capture dependencies or sync uploads/downloads</td>
-											<td>Faster iterations and debugging, leading to improved user experience.</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</section>
+    .hero-label {
+      display: inline-block;
+      font-size: 11.5px; font-weight: 600;
+      letter-spacing: .6px; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 24px;
+    }
 
-				<!-- pricing -->
-					<section id="pricing" class="wrapper style2-alt fade-up">
-						<div class="inner">
-							<h2 class="section-header">Pricing</h2>
-							<div class="section-underline section-underline-large"></div>
-							<div class="pricing-grid">
-								<div class="pricing-card">
-									<h4 class="pricing-card-title">Subscription</h4>
-									<ul class="pricing-list">
-										<li>&bull; Choose a time-based subscription (1 month to 1 year) for one or more GPUs, with better discounts for longer commitments.</li>
-										<li>&bull; The subscription is shared across your entire organization, and pricing varies based on the GPU generation and model.</li>
-										<li>&bull; No limit on use of subscribed GPUs.</li>
-									</ul>
-								</div>
-								<div class="pricing-card">
-									<h4 class="pricing-card-title">Burst access</h4>
-									<ul class="pricing-list">
-										<li>&bull; Access additional GPUs on-demand without reserving upfront.</li>
-										<li>&bull; Billed by GPU-hours, with clear pricing provided at the time of job execution. Admins can control and limit burst GPU usage.</li>
-									</ul>
-								</div>
-								<div class="pricing-card">
-									<h4 class="pricing-card-title">Storage</h4>
-									<ul class="pricing-list">
-										<li>&bull; Multi-terabyte storage is included with your GPU subscription. Additional storage is available at competitive prices, and it's shared across all team members.</li>
-									</ul>
-								</div>
-								<div class="pricing-card">
-									<h4 class="pricing-card-title">Payment options</h4>
-									<ul class="pricing-list">
-										<li>&bull; We offer both credit card payments (in USD) and invoice billing for larger institutions.</li>
-										<li>&bull; We can work with your institution to be onboarded as an approved vendor and help with your grant proposals.</li>
-									</ul>
-								</div>
-								<div class="pricing-card">
-									<h4 class="pricing-card-title">Free trials</h4>
-									<ul class="pricing-list">
-										<li>&bull; Extended free trials are available to ensure your workloads run smoothly before committing to a subscription.</li>
-									</ul>
-								</div>
-								<div class="pricing-card">
-									<h4 class="pricing-card-title">Sample pricing</h4>
-									<ul class="pricing-list">
-										<li>&bull; $600/H100/Month.</li>
-										<li>&bull; $866/H200/Month.</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</section>
+    .hero h1 {
+      font-size: clamp(34px, 4.8vw, 56px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.08;
+      margin-bottom: 18px;
+    }
 
-				<!-- Three -->
-					<section id="about" class="wrapper style1-alt fade-up">
-						<div class="inner">
-							<h2 class="section-header">About us</h2>
-							<div class="section-underline"></div>
+    .hero h1 em {
+      font-style: normal;
+      color: var(--orange);
+    }
 
-    						<p class="intro-text-large">We are a team of experienced engineers and entrepreneurs with deep expertise
-								in building GPU cloud infrastructure at leading companies like Intel, NVIDIA, Google, and others.
-								We shipped the first CUDA GPU at NVIDIA, the first Xe GPU at Intel, and built the core tech for Google's Stadia Cloud Gaming service.
-								Based in Silicon Valley, we are passionate about solving the unique challenges faced by researchers in academia and industry.</p>
+    .hero-sub {
+      font-size: clamp(15px, 1.7vw, 17px);
+      color: var(--mid);
+      margin-bottom: 36px;
+      line-height: 1.65;
+      max-width: 380px;
+    }
 
-							<div class="about-grid">
-								<div class="about-card">
-									<h4 class="about-card-title">Contact Us</h4>
-									<p class="about-card-text">For corporate inquiries, reach us at <strong>info@cloudexe.tech</strong>.</p>
-								</div>
-							</div>
+    .hero-actions {
+      display: flex; gap: 10px; flex-wrap: wrap;
+    }
 
-							<h4 class="subheader-large">Investors</h4>
-							<div class="investor-container">
-								<img class="image investor-logo" src="https://images.squarespace-cdn.com/content/v1/602fe8eef3f6185d8768e787/1619484854465-4HYD8PML6WHXW3KPLKP4/Artboard+1.png?format=1500w" />
-							</div>
-							<p></p>
-						</div>
-					</section>
+    .hero-actions .btn { font-size: 14px; padding: 10px 24px; }
 
-			</div>
+    .hero-visual {
+      display: flex; align-items: center; justify-content: center;
+    }
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; 2024-2026 Cloudexe Inc. All rights reserved.</li>
-					</ul>
-				</div>
-			</footer>
+    lottie-player.hero-lottie {
+      width: 100%; max-width: 440px;
+    }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    /* ── Section shared ── */
+    .section { padding: 88px 0; border-bottom: 1px solid var(--line); }
+    .section-sm { padding: 72px 0; border-bottom: 1px solid var(--line); }
+    .bg-tint { background: var(--bg); }
 
-	</body>
+    .eyebrow {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .8px; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-h {
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 800; letter-spacing: -1px;
+      line-height: 1.15; margin-bottom: 14px;
+    }
+
+    .section-p {
+      font-size: 16px; color: var(--mid);
+      max-width: 480px; line-height: 1.7;
+    }
+
+    /* ── Why ── */
+    .why-problems {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .why-problem-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px 24px 32px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    }
+
+    .why-problem-num {
+      width: 28px; height: 28px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: #fff;
+      letter-spacing: .3px;
+      margin-bottom: 16px;
+    }
+
+    .why-problem-title {
+      font-size: 15px; font-weight: 700;
+      letter-spacing: -.1px; color: var(--ink);
+      margin-bottom: 10px; line-height: 1.3;
+    }
+
+    .why-problem-sub {
+      font-size: 13.5px; color: var(--mid); line-height: 1.6;
+    }
+
+    /* ── Features ── */
+    .features-intro { max-width: 540px; margin-bottom: 48px; }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+
+    .feature {
+      background: var(--white);
+      padding: 28px 24px 32px;
+      transition: background .15s;
+    }
+    .bg-tint .feature { background: var(--bg); }
+    .feature:hover { background: var(--white); }
+
+    .feature-icon {
+      width: 36px; height: 36px;
+      background: var(--orange-l);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .feature-icon svg { width: 18px; height: 18px; }
+
+    .feature h3 {
+      font-size: 15px; font-weight: 700;
+      letter-spacing: -.15px; margin-bottom: 6px;
+    }
+
+    .feature p {
+      font-size: 13.5px; color: var(--mid); line-height: 1.6;
+    }
+
+    /* ── How it works ── */
+    .how-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .how-steps { display: flex; flex-direction: column; }
+
+    .how-step {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .how-step:first-child { padding-top: 0; }
+    .how-step:last-child  { border-bottom: none; padding-bottom: 0; }
+
+    .how-num {
+      width: 28px; height: 28px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: #fff;
+      letter-spacing: .3px;
+      margin-bottom: 12px;
+    }
+
+    .how-step-title {
+      font-size: 15px; font-weight: 700;
+      letter-spacing: -.1px; margin-bottom: 6px; color: var(--ink);
+    }
+
+    .how-step-sub {
+      font-size: 13.5px; color: var(--mid);
+      line-height: 1.6;
+    }
+
+    /* Architecture diagram */
+    .arch-diagram {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 28px 24px 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.04);
+    }
+
+    .arch-row {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 8px;
+    }
+    .arch-row + .arch-row { margin-top: 8px; }
+
+    .arch-divider {
+      border: none; border-top: 1px dashed var(--line);
+      margin: 12px 0;
+    }
+
+    .arch-box {
+      flex: 1;
+      border-radius: 8px;
+      padding: 12px 14px;
+      text-align: center;
+    }
+
+    .arch-box-label {
+      font-size: 13px; font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .arch-box-sub {
+      font-size: 11px; font-weight: 500;
+    }
+
+    .arch-box.researcher {
+      background: #FEF0E7;
+      border: 1px solid #FDDCC9;
+    }
+    .arch-box.researcher .arch-box-label { color: #C4501A; }
+    .arch-box.researcher .arch-box-sub   { color: #C4501A; opacity: .7; }
+
+    .arch-box.base {
+      background: #EEF0FD;
+      border: 1px solid #D5D9FA;
+    }
+    .arch-box.base .arch-box-label { color: #3D4BB5; }
+    .arch-box.base .arch-box-sub   { color: #3D4BB5; opacity: .7; }
+
+    .arch-box.gpu {
+      background: #EDFAF3;
+      border: 1px solid #C3EDD5;
+    }
+    .arch-box.gpu .arch-box-label { color: #1A7A45; }
+    .arch-box.gpu .arch-box-sub   { color: #1A7A45; opacity: .7; }
+
+    .arch-arrow {
+      font-size: 16px; color: var(--dim);
+      flex-shrink: 0;
+    }
+
+    .arch-tags {
+      display: flex; flex-wrap: nowrap; gap: 5px;
+      margin-top: 16px;
+    }
+
+    .arch-tag {
+      font-size: 10.5px; font-weight: 500;
+      color: var(--mid);
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      padding: 4px 8px;
+      background: var(--bg);
+      white-space: nowrap;
+    }
+
+    .arch-caption {
+      text-align: center;
+      font-size: 11px; color: var(--dim);
+      margin-top: 14px;
+      letter-spacing: .2px;
+    }
+
+    /* ── Pricing ── */
+    .pricing-intro { margin-bottom: 44px; }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .price-card {
+      border: 1.5px solid var(--line);
+      border-radius: 14px;
+      padding: 28px 24px 32px;
+      background: var(--white);
+      position: relative;
+      transition: border-color .2s, box-shadow .2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .price-card:hover {
+      border-color: #D0CDC7;
+      box-shadow: 0 4px 20px rgba(0,0,0,.07);
+    }
+    .price-card.featured {
+      border-color: var(--line);
+    }
+
+    .price-badge {
+      position: absolute; top: -11px; left: 20px;
+      background: var(--orange); color: #fff;
+      font-size: 10.5px; font-weight: 700;
+      letter-spacing: .4px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 100px;
+    }
+
+    .price-tier {
+      font-size: 26px; font-weight: 800;
+      letter-spacing: -.5px;
+      color: var(--ink); margin-bottom: 12px;
+    }
+
+    .price-desc {
+      font-size: 13.5px; color: var(--mid);
+      line-height: 1.6; margin-bottom: 22px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .price-attrs { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+
+    .price-attr {
+      display: flex; align-items: center; gap: 9px;
+      font-size: 13px; color: var(--mid);
+    }
+
+    .price-attr-dot {
+      width: 6px; height: 6px; min-width: 6px;
+      border-radius: 50%; background: var(--orange); opacity: .6;
+    }
+
+    .price-amount {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-size: 22px; font-weight: 800;
+      letter-spacing: -.5px; color: var(--ink);
+    }
+
+    .price-unit {
+      font-size: 12px; font-weight: 500;
+      color: var(--dim); letter-spacing: 0;
+      margin-left: 2px;
+    }
+
+    /* ── About ── */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .about-left .section-p { max-width: 100%; margin-bottom: 32px; }
+
+    .about-partners { display: flex; flex-direction: column; gap: 24px; }
+
+    .partner-group-label {
+      font-size: 10.5px; font-weight: 700;
+      letter-spacing: .7px; text-transform: uppercase;
+      color: var(--dim); margin-bottom: 10px;
+    }
+
+    .partner-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .chip {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12.5px; font-weight: 600;
+      color: var(--mid);
+      padding: 6px 12px;
+      border: 1.5px solid var(--line);
+      border-radius: var(--r);
+      background: var(--bg);
+      transition: border-color .14s, color .14s;
+    }
+    .chip:hover { border-color: #C8C4BC; color: var(--ink); }
+
+    .chip-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--orange); opacity: .65;
+    }
+
+    .about-right { display: flex; flex-direction: column; gap: 20px; }
+
+    .about-fact {
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+
+    .fact-icon {
+      width: 36px; height: 36px; min-width: 36px;
+      background: var(--orange-l);
+      border: 1px solid var(--orange-b);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .fact-icon svg { width: 18px; height: 18px; }
+
+    .fact-text {
+      font-size: 14px; color: var(--mid);
+      line-height: 1.65;
+    }
+    .fact-text strong { color: var(--ink); font-weight: 600; }
+
+    .investor-block { margin-top: 32px; }
+
+    .investor-label {
+      font-size: 10.5px; font-weight: 700;
+      letter-spacing: .7px; text-transform: uppercase;
+      color: var(--dim); margin-bottom: 12px;
+    }
+
+    .investor-logo {
+      max-height: 44px; width: auto;
+      filter: grayscale(1); opacity: .5;
+      transition: opacity .15s;
+    }
+    .investor-logo:hover { opacity: .8; }
+
+    /* ── CTA strip ── */
+    .cta-strip {
+      padding: 80px 0;
+      text-align: center;
+      background: var(--ink);
+    }
+
+    .cta-strip h2 {
+      font-size: clamp(26px, 3.8vw, 42px);
+      font-weight: 800; letter-spacing: -1.2px;
+      color: #fff; margin-bottom: 14px; line-height: 1.15;
+    }
+
+    .cta-strip h2 em { font-style: normal; color: var(--orange); }
+
+    .cta-strip p {
+      font-size: 16px; color: rgba(255,255,255,.5);
+      margin-bottom: 36px;
+    }
+
+    .cta-row {
+      display: flex; align-items: center; gap: 8px;
+      justify-content: center;
+      background: rgba(255,255,255,.07);
+      border: 1.5px solid rgba(255,255,255,.12);
+      border-radius: 12px;
+      padding: 5px 5px 5px 18px;
+      max-width: 400px; margin: 0 auto;
+      transition: border-color .15s;
+    }
+    .cta-row:focus-within {
+      border-color: rgba(242,100,25,.55);
+      box-shadow: 0 0 0 3px rgba(242,100,25,.1);
+    }
+
+    .cta-row input[type="email"] {
+      flex: 1; border: none; outline: none;
+      background: transparent; font-family: inherit;
+      font-size: 14px; color: #fff; min-width: 180px;
+    }
+    .cta-row input::placeholder { color: rgba(255,255,255,.3); }
+
+    .cta-note {
+      margin-top: 12px; font-size: 12px;
+      color: rgba(255,255,255,.25);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(255,255,255,.05);
+      padding: 28px 0;
+    }
+
+    .footer-row {
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+
+    .footer-logo {
+      display: flex; align-items: center; gap: 8px;
+      text-decoration: none;
+    }
+    .footer-logo img { height: 22px; opacity: .45; filter: brightness(10); }
+
+    .footer-copy { font-size: 13px; color: rgba(255,255,255,.22); }
+
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a {
+      font-size: 13px; color: rgba(255,255,255,.3);
+      text-decoration: none; transition: color .14s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,.65); }
+
+    /* ── Social proof ribbon ── */
+    .ribbon-section {
+      border-bottom: 1px solid var(--line);
+      background: var(--bg);
+      padding: 32px 0;
+      overflow: hidden;
+    }
+
+    .ribbon {
+      overflow: hidden;
+      width: 100%;
+      mask-image: linear-gradient(to right,
+        transparent 0%,
+        black 120px,
+        black calc(100% - 120px),
+        transparent 100%);
+      -webkit-mask-image: linear-gradient(to right,
+        transparent 0%,
+        black 120px,
+        black calc(100% - 120px),
+        transparent 100%);
+    }
+
+    .ribbon-track {
+      display: flex;
+      align-items: stretch;
+      animation: scrollRibbon 60s linear infinite;
+      width: fit-content;
+      will-change: transform;
+      gap: 16px;
+    }
+    .ribbon-track:hover { animation-play-state: paused; }
+
+    @keyframes scrollRibbon {
+      0%   { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+
+    .ribbon-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-shrink: 0;
+      width: 340px;
+      padding: 24px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    }
+
+    .ribbon-quote {
+      font-size: 13.5px;
+      color: var(--mid);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .ribbon-footer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .ribbon-logo {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      object-fit: contain;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      padding: 3px;
+    }
+
+    .ribbon-logo-fallback {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      background: var(--orange-l);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--orange);
+    }
+
+    .ribbon-meta { min-width: 0; }
+
+    .ribbon-name {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .ribbon-attribution {
+      font-size: 11.5px;
+      color: var(--dim);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 720px) {
+      .hero-inner      { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual     { display: none; }
+      .why-problems    { grid-template-columns: 1fr; }
+      .about-layout    { grid-template-columns: 1fr; gap: 40px; }
+      .how-layout      { grid-template-columns: 1fr; gap: 40px; }
+      .pricing-grid    { grid-template-columns: 1fr; }
+      .section, .section-sm { padding: 60px 0; }
+      .hero            { padding: 64px 0 56px; }
+      nav .nav-links   { display: none; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="wrap">
+    <div class="nav-row">
+      <a href="#" class="logo">
+        <svg height="28" viewBox="0 0 224.5 220" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+          <path fill="#F26419" d="m147.83,110c0,9.9-4.01,18.85-10.5,25.34-6.48,6.48-15.44,10.5-25.34,10.5s-18.85-4.01-25.34-10.5c-6.48-6.48-10.5-15.44-10.5-25.34s4.01-18.85,10.5-25.34c6.48-6.48,15.44-10.5,25.34-10.5s18.85,4.01,25.34,10.5c6.48,6.48,10.5,15.44,10.5,25.34Z"/>
+          <path fill="#F26419" d="m112,183.32c-19.58,0-38-7.63-51.84-21.48-13.85-13.85-21.47-32.26-21.47-51.84s7.63-38,21.47-51.85c13.85-13.85,32.26-21.47,51.84-21.47s38,7.63,51.84,21.47l-18.54,18.54c-8.9-8.9-20.72-13.8-33.31-13.8s-24.41,4.9-33.3,13.8c-8.9,8.9-13.8,20.72-13.8,33.3s4.9,24.41,13.8,33.3c8.9,8.9,20.72,13.8,33.3,13.8s24.41-4.9,33.3-13.79l18.54,18.54c-13.85,13.85-32.26,21.48-51.85,21.48Z"/>
+          <path fill="#F26419" d="m112,220.28c-29.46,0-57.15-11.47-77.98-32.3C13.19,167.15,1.72,139.46,1.72,110h27.71c0,22.05,8.59,42.79,24.18,58.38,15.59,15.59,36.33,24.18,58.38,24.18s42.79-8.59,58.38-24.18c15.59-15.59,24.18-36.33,24.18-58.38s-8.59-42.79-24.18-58.38c-15.6-15.59-36.33-24.18-58.38-24.18V-.28c29.46,0,57.15,11.47,77.98,32.3,20.83,20.83,32.3,48.52,32.3,77.98s-11.47,57.15-32.3,77.98c-20.83,20.83-48.52,32.3-77.98,32.3Z"/>
+        </svg>
+        <span class="logo-name">Cloudexe</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#why">Why Cloudexe</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <a href="#request" class="btn btn-orange">Get access</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="intro">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <h1>Run your research.<br/><em>Not your infrastructure.</em></h1>
+        <p class="hero-sub">GPU cloud built for research labs. No queues. No waste. Just Science.</p>
+        <div class="hero-actions">
+          <a href="#request" class="btn btn-orange">Request access</a>
+          <a href="#why" class="btn btn-ghost">See how it works</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <lottie-player src="images/heroanim.json" background="transparent" speed="1" class="hero-lottie" loop autoplay></lottie-player>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social proof ribbon -->
+<div class="ribbon-section">
+  <div class="ribbon">
+    <div class="ribbon-track">
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"We switched due to their competitive pricing and reliability."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="https://mma.prnewswire.com/media/1800494/DevRev_Logo.jpg" alt="DevRev Inc." />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Anshu Avinash</div>
+            <div class="ribbon-attribution">Tech Dir, AI &amp; Search · DevRev</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Love Cloudexe for their pricing and stellar support!"</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="https://pbs.twimg.com/profile_images/1787951527833042944/EsPYONot.jpg" alt="Collinear.ai" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Soumyadeep Bakshi</div>
+            <div class="ribbon-attribution">Co-founder · Collinear.ai</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Deployments become effortless with intuitive interface."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="https://www.cmu.edu/brand/brand-guidelines/images/lettermark-600x600.jpg" alt="CMU" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Prof. Fernando De La Torre</div>
+            <div class="ribbon-attribution">CMU Robotics Institute</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Ideal UX for managing multi-campus education and research infrastructure."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/BITS_Pilani-Logo.svg/1200px-BITS_Pilani-Logo.svg.png" alt="BITS Pilani" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Prof. Snehanshu Saha</div>
+            <div class="ribbon-attribution">BITS Pilani, India</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Runtime abstraction is clean...provided excellent support throughout."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Arizona_State_University_seal.svg/1200px-Arizona_State_University_seal.svg.png" alt="ASU" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Dr. Rolando Garcia</div>
+            <div class="ribbon-attribution">Presidential Fellow · Arizona State</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Easy to use, simple to operate, and has delivered strong performance for our research needs."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="images/duke_logo.png" alt="Duke University" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Prof. Yiran Chen</div>
+            <div class="ribbon-attribution">Duke University</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Super clean and intuitive — integral to accelerating our lab's work on learning trajectory analyses."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="images/bu_logo.png" alt="Boston University" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Prof. Najoung Kim</div>
+            <div class="ribbon-attribution">Boston University</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Made it easier to test ideas quickly and stay focused on the research itself."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Arizona_State_University_seal.svg/1200px-Arizona_State_University_seal.svg.png" alt="ASU" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Sangmin Jung</div>
+            <div class="ribbon-attribution">PhD Candidate · Arizona State</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Phenomenal experience. Removes many inconveniences of other GPU providers — intuitive platform, fantastic support."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="images/puc_logo.png" alt="PUC-Behring" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Victor Shirasuna</div>
+            <div class="ribbon-attribution">AI Research Scientist · PUC-Behring</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Duplicate set for seamless loop -->
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"We switched due to their competitive pricing and reliability."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="https://mma.prnewswire.com/media/1800494/DevRev_Logo.jpg" alt="DevRev Inc." />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Anshu Avinash</div>
+            <div class="ribbon-attribution">Tech Dir, AI &amp; Search · DevRev</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Love Cloudexe for their pricing and stellar support!"</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="https://pbs.twimg.com/profile_images/1787951527833042944/EsPYONot.jpg" alt="Collinear.ai" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Soumyadeep Bakshi</div>
+            <div class="ribbon-attribution">Co-founder · Collinear.ai</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Deployments become effortless with intuitive interface."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="https://www.cmu.edu/brand/brand-guidelines/images/lettermark-600x600.jpg" alt="CMU" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Prof. Fernando De La Torre</div>
+            <div class="ribbon-attribution">CMU Robotics Institute</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Ideal UX for managing multi-campus education and research infrastructure."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/BITS_Pilani-Logo.svg/1200px-BITS_Pilani-Logo.svg.png" alt="BITS Pilani" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Prof. Snehanshu Saha</div>
+            <div class="ribbon-attribution">BITS Pilani, India</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Runtime abstraction is clean...provided excellent support throughout."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Arizona_State_University_seal.svg/1200px-Arizona_State_University_seal.svg.png" alt="ASU" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Dr. Rolando Garcia</div>
+            <div class="ribbon-attribution">Presidential Fellow · Arizona State</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Easy to use, simple to operate, and has delivered strong performance for our research needs."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="images/duke_logo.png" alt="Duke University" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Prof. Yiran Chen</div>
+            <div class="ribbon-attribution">Duke University</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Super clean and intuitive — integral to accelerating our lab's work on learning trajectory analyses."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="images/bu_logo.png" alt="Boston University" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Prof. Najoung Kim</div>
+            <div class="ribbon-attribution">Boston University</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Made it easier to test ideas quickly and stay focused on the research itself."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Arizona_State_University_seal.svg/1200px-Arizona_State_University_seal.svg.png" alt="ASU" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Sangmin Jung</div>
+            <div class="ribbon-attribution">PhD Candidate · Arizona State</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-item">
+        <div class="ribbon-quote">"Phenomenal experience. Removes many inconveniences of other GPU providers — intuitive platform, fantastic support."</div>
+        <div class="ribbon-footer">
+          <img class="ribbon-logo" src="images/puc_logo.png" alt="PUC-Behring" />
+          <div class="ribbon-meta">
+            <div class="ribbon-name">Victor Shirasuna</div>
+            <div class="ribbon-attribution">AI Research Scientist · PUC-Behring</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Why Cloudexe -->
+<section class="section" id="why">
+  <div class="wrap">
+    <span class="eyebrow">Why Cloudexe</span>
+    <h2 class="section-h" style="margin-bottom: 8px;">Traditional clouds weren't built for research.</h2>
+    <p class="section-p" style="margin-bottom: 48px;">They were built for IT teams. Here's what that costs you.</p>
+
+    <div class="why-problems">
+
+      <div class="why-problem-card">
+        <div class="why-problem-num">1</div>
+        <div class="why-problem-title">Cost vs. availability tradeoff</div>
+        <div class="why-problem-sub">Reserved instances are expensive. Spot instances disappear. Research teams end up either overpaying or waiting in queues when they need GPUs most.</div>
+      </div>
+
+      <div class="why-problem-card">
+        <div class="why-problem-num">2</div>
+        <div class="why-problem-title">Requires a sysadmin to operate</div>
+        <div class="why-problem-sub">Hyperscaler UX is designed for IT professionals. Researchers end up managing VMs, containers, and networking instead of running experiments.</div>
+      </div>
+
+      <div class="why-problem-card">
+        <div class="why-problem-num">3</div>
+        <div class="why-problem-title">Constant syncing and rebuilding</div>
+        <div class="why-problem-sub">Every new session means re-uploading code, reinstalling dependencies, and waiting for environments to spin up. Context-switching kills research momentum.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="section bg-tint" id="how">
+  <div class="wrap">
+    <div class="how-layout">
+      <div>
+        <span class="eyebrow">How it works</span>
+        <h2 class="section-h">Persistent environment. On-demand GPUs.</h2>
+        <p class="section-p" style="margin-bottom: 36px;">Cloudexe separates your environment from your compute — solving all three problems at once.</p>
+        <div class="how-steps">
+          <div class="how-step">
+            <div class="how-num">1</div>
+            <div class="how-step-title">JIT GPU architecture</div>
+            <div class="how-step-sub">GPUs attach to your job on demand and release when done. The shared fleet stays highly utilized — availability stays high, your bill stays low.</div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">2</div>
+            <div class="how-step-title">Persistent base instance. No rebuilds, ever.</div>
+            <div class="how-step-sub">Each researcher gets a personal environment that's always on. Your code, tools, and dependencies are exactly where you left them.</div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">3</div>
+            <div class="how-step-title">Simple lab management. No IT team needed.</div>
+            <div class="how-step-sub">Onboard users, set quotas, manage projects — all from one clean dashboard. Cloudexe handles the orchestration so your team can focus on research.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arch-diagram">
+        <div class="arch-row">
+          <div class="arch-box researcher">
+            <div class="arch-box-label">Researcher</div>
+            <div class="arch-box-sub">SSH / Browser</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box base">
+            <div class="arch-box-label">Base Instance</div>
+            <div class="arch-box-sub">Always-on env</div>
+          </div>
+        </div>
+        <hr class="arch-divider" />
+        <div class="arch-row">
+          <div class="arch-box base">
+            <div class="arch-box-label">Base Instance</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-box gpu">
+            <div class="arch-box-label">GPU Fleet</div>
+            <div class="arch-box-sub">JIT · Release on complete</div>
+          </div>
+        </div>
+        <div class="arch-tags">
+          <span class="arch-tag">↑ Availability</span>
+          <span class="arch-tag">↓ Cost</span>
+          <span class="arch-tag">↓ Ops overhead</span>
+          <span class="arch-tag">↑ Focus time</span>
+        </div>
+        <div class="arch-caption">Persistent Env + JIT GPU Architecture</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="pricing-intro">
+      <span class="eyebrow">Pricing</span>
+      <h2 class="section-h">Pay for how you run.</h2>
+      <p class="section-p">Three tiers matched to how your lab works — from flexible to fully guaranteed.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <div class="price-tier">Silver</div>
+        <p class="price-desc">Best value for exploratory work and non-critical jobs.</p>
+        <div class="price-attrs">
+          <div class="price-attr"><span class="price-attr-dot"></span>Spot-based pricing</div>
+          <div class="price-attr"><span class="price-attr-dot"></span>Best for dev &amp; exploration</div>
+          <div class="price-attr"><span class="price-attr-dot"></span>Lowest cost</div>
+        </div>
+        <div class="price-amount">$1.39<span class="price-unit">/GPU·hr</span></div>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-tier">Gold</div>
+        <p class="price-desc">Reliable access with no interruptions mid-job and predictable billing.</p>
+        <div class="price-attrs">
+          <div class="price-attr"><span class="price-attr-dot"></span>On-demand pricing</div>
+          <div class="price-attr"><span class="price-attr-dot"></span>Best for batch jobs</div>
+          <div class="price-attr"><span class="price-attr-dot"></span>No mid-job interruptions</div>
+        </div>
+        <div class="price-amount">$2.49<span class="price-unit">/GPU·hr</span></div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-tier">Platinum</div>
+        <p class="price-desc">On-demand guaranteed capacity at any time, without competition.</p>
+        <div class="price-attrs">
+          <div class="price-attr"><span class="price-attr-dot"></span>Reserved capacity</div>
+          <div class="price-attr"><span class="price-attr-dot"></span>Best for mission critical jobs</div>
+          <div class="price-attr"><span class="price-attr-dot"></span>Priority allocation</div>
+        </div>
+        <div class="price-amount">$2.49<span class="price-unit">/GPU·hr</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section bg-tint" id="about">
+  <div class="wrap">
+    <div class="about-layout">
+      <div class="about-left">
+        <span class="eyebrow">About Cloudexe</span>
+        <h2 class="section-h">Built by people who've shipped GPU products at scale.</h2>
+        <p class="section-p">Seed-stage startup from Silicon Valley. The founding team led iconic GPU programs at NVIDIA, Intel, and Google — shipping the first CUDA GPU, first Xe GPU, and the core tech behind Google Stadia.</p>
+
+        <div class="investor-block">
+          <div class="investor-label">Backed by</div>
+          <img class="investor-logo" src="https://images.squarespace-cdn.com/content/v1/602fe8eef3f6185d8768e787/1619484854465-4HYD8PML6WHXW3KPLKP4/Artboard+1.png?format=1500w" alt="Engineering Capital" />
+        </div>
+      </div>
+
+      <div class="about-right">
+        <div class="about-fact">
+          <div class="fact-icon">
+            <svg viewBox="0 0 18 18" fill="none">
+              <path d="M9 2l1.8 5.4H17l-4.9 3.6 1.9 5.6L9 13.1l-5 3.5 1.9-5.6L1 7.4h6.2L9 2z" stroke="#F26419" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p class="fact-text"><strong>Backed by Engineering Capital</strong> — specialists in infrastructure and virtualization.</p>
+        </div>
+        <div class="about-fact">
+          <div class="fact-icon">
+            <svg viewBox="0 0 18 18" fill="none">
+              <circle cx="9" cy="7" r="4" stroke="#F26419" stroke-width="1.7"/>
+              <path d="M2 16c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke="#F26419" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="fact-text"><strong>Deep GPU pedigree</strong> — team behind NVIDIA CUDA, Intel GPU Flex, and Google Stadia.</p>
+        </div>
+        <div class="about-fact">
+          <div class="fact-icon">
+            <svg viewBox="0 0 18 18" fill="none">
+              <circle cx="9" cy="9" r="7.5" stroke="#F26419" stroke-width="1.7"/>
+              <path d="M9 5v4l3 2" stroke="#F26419" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p class="fact-text"><strong>Mission:</strong> simplify GPU infrastructure for research labs, startups, and enterprises.</p>
+        </div>
+        <div class="about-fact">
+          <div class="fact-icon">
+            <svg viewBox="0 0 18 18" fill="none">
+              <path d="M3 9h12M3 5h12M3 13h7" stroke="#F26419" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="fact-text"><strong>Contact us</strong> at <strong>info@cloudexe.tech</strong> for corporate inquiries or partnership discussions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip" id="request">
+  <div class="wrap">
+    <h2>Stop managing infra.<br/><em>Start running experiments.</em></h2>
+    <p>Join the early access program.</p>
+    <div class="cta-row">
+      <input type="email" placeholder="you@university.edu" />
+      <a href="https://forms.microsoft.com/r/B7sdb6JDyZ" class="btn btn-orange">Request access</a>
+    </div>
+    <p class="cta-note">No credit card &nbsp;·&nbsp; Research labs only</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <a href="#" class="footer-logo">
+        <svg height="22" viewBox="0 0 224.5 220" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;opacity:.6;filter:brightness(10)">
+          <path fill="#F26419" d="m147.83,110c0,9.9-4.01,18.85-10.5,25.34-6.48,6.48-15.44,10.5-25.34,10.5s-18.85-4.01-25.34-10.5c-6.48-6.48-10.5-15.44-10.5-25.34s4.01-18.85,10.5-25.34c6.48-6.48,15.44-10.5,25.34-10.5s18.85,4.01,25.34,10.5c6.48,6.48,10.5,15.44,10.5,25.34Z"/>
+          <path fill="#F26419" d="m112,183.32c-19.58,0-38-7.63-51.84-21.48-13.85-13.85-21.47-32.26-21.47-51.84s7.63-38,21.47-51.85c13.85-13.85,32.26-21.47,51.84-21.47s38,7.63,51.84,21.47l-18.54,18.54c-8.9-8.9-20.72-13.8-33.31-13.8s-24.41,4.9-33.3,13.8c-8.9,8.9-13.8,20.72-13.8,33.3s4.9,24.41,13.8,33.3c8.9,8.9,20.72,13.8,33.3,13.8s24.41-4.9,33.3-13.79l18.54,18.54c-13.85,13.85-32.26,21.48-51.85,21.48Z"/>
+          <path fill="#F26419" d="m112,220.28c-29.46,0-57.15-11.47-77.98-32.3C13.19,167.15,1.72,139.46,1.72,110h27.71c0,22.05,8.59,42.79,24.18,58.38,15.59,15.59,36.33,24.18,58.38,24.18s42.79-8.59,58.38-24.18c15.59-15.59,24.18-36.33,24.18-58.38s-8.59-42.79-24.18-58.38c-15.6-15.59-36.33-24.18-58.38-24.18V-.28c29.46,0,57.15,11.47,77.98,32.3,20.83,20.83,32.3,48.52,32.3,77.98s-11.47,57.15-32.3,77.98c-20.83,20.83-48.52,32.3-77.98,32.3Z"/>
+        </svg>
+        <span>Cloudexe</span>
+      </a>
+      <span class="footer-copy">© 2024–2026 Cloudexe Inc. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="/privacy.html">Privacy</a>
+        <a href="mailto:info@cloudexe.tech">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>
