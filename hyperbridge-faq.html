@@ -390,13 +390,21 @@
             <ul class="faq-bullets">
               <li class="faq-bullet">
                 <span class="faq-bullet-dot fit"></span>
-                <span>If you are spending meaningfully on <strong>Azure, AWS, or GCP GPU instances</strong> (P5, P5N, and similar) and want to reduce cost or improve GPU access — <strong>this is for you.</strong></span>
-              </li>
-              <li class="faq-bullet">
-                <span class="faq-bullet-dot nofit"></span>
-                <span>If you are consuming GPUs via a <strong>managed service like AWS Bedrock</strong>, Hyperbridge is not the right fit — those services abstract the GPU layer and don't expose the virtualization surface we operate on.</span>
+                <span>If you are spending meaningfully on <strong>Azure, AWS, or GCP GPU instances</strong> (P5, P5EN, and similar) and want to reduce cost or improve GPU access, OR you are looking to setup a scalable AI infrastructure while staying within your hyperscaler environment — <strong>this is for you.</strong></span>
               </li>
             </ul>
+          </div>
+        </details>
+
+        <details class="faq-item" id="q-icp">
+          <summary>
+            What kind of workloads are best fit?
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="faq-body">
+            <p>Most GPU-heavy workloads (LLM training, fine-tuning, inference, multi-modal AI, classic ML algorithms, statistical modeling, scientific computation, etc..) will work out of the box.</p>
           </div>
         </details>
 
@@ -500,8 +508,6 @@
             <p>Your containers are still running inside your VPC, only the compute is happening outside. Nothing needs to change in your ACL or networking rules. Your dependencies stay private and accessible as if the GPU is local to your infra.</p>
           </div>
         </details>
-
-
 
         <details class="faq-item" id="q-maturity">
           <summary>
