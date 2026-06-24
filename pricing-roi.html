@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — Cloudexe</title>
+  <link rel="icon" type="image/x-icon" href="/images/logo.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange:   #F26419;
+      --orange-l: #FEF0E7;
+      --orange-b: #FDDCC9;
+      --ink:      #111110;
+      --mid:      #5A5750;
+      --dim:      #9E9B96;
+      --line:     #E8E5E0;
+      --bg:       #FAFAF8;
+      --white:    #FFFFFF;
+      --nav-h:    56px;
+      --r:        10px;
+    }
+    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--white); color: var(--ink);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Top nav ── */
+    .topnav {
+      position: sticky; top: 0; z-index: 60;
+      height: var(--nav-h);
+      background: var(--ink);
+      display: flex; align-items: center;
+      padding: 0 40px; gap: 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .tn-logo {
+      display: flex; align-items: center; gap: 9px;
+      text-decoration: none; margin-right: 28px; flex-shrink: 0;
+    }
+    .tn-logo-name { font-size: 16px; font-weight: 800; letter-spacing: -.4px; color: #fff; }
+    .tn-links {
+      display: flex; align-items: center; gap: 2px; flex: 1; overflow: hidden;
+    }
+    .tn-links a {
+      font-size: 12px; font-weight: 500; color: rgba(255,255,255,.42);
+      text-decoration: none; padding: 6px 9px; border-radius: 6px; white-space: nowrap;
+      transition: color .12s, background .12s;
+    }
+    .tn-links a:hover { color: rgba(255,255,255,.88); background: rgba(255,255,255,.07); }
+    .tn-links a.active { color: rgba(255,255,255,.88); }
+    .tn-cta { margin-left: 12px; flex-shrink: 0; }
+    .tn-cta a {
+      font-size: 12px; font-weight: 600; color: #fff;
+      background: var(--orange); border-radius: var(--r);
+      padding: 7px 16px; text-decoration: none; transition: background .12s;
+    }
+    .tn-cta a:hover { background: #D9580F; }
+
+    /* ── Page layout ── */
+    .page-wrap { max-width: 1100px; margin: 0 auto; padding: 64px 64px 80px; }
+
+    /* ── Typography ── */
+    .label {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: .8px; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 16px;
+    }
+    .page-title {
+      font-size: clamp(28px, 3.5vw, 38px); font-weight: 700;
+      letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 10px;
+    }
+    .page-sub {
+      font-size: 15px; color: var(--mid); line-height: 1.6; margin-bottom: 48px;
+    }
+
+    /* ── Section headings ── */
+    .section-hd {
+      font-size: 11px; font-weight: 700; letter-spacing: .7px;
+      text-transform: uppercase; color: var(--dim);
+      margin-bottom: 16px; margin-top: 48px;
+    }
+    .section-hd:first-of-type { margin-top: 0; }
+
+    /* ── iframe wrapper ── */
+    .embed-wrap {
+      display: inline-block;
+      border: 1px solid var(--line); border-radius: 12px;
+      overflow: hidden; background: var(--white);
+      box-shadow: 0 1px 6px rgba(0,0,0,.05);
+    }
+    .embed-wrap iframe {
+      display: block; border: none;
+    }
+
+    /* ── Footer ── */
+    .foot {
+      background: var(--ink); padding: 22px 64px;
+      border-top: 1px solid rgba(255,255,255,.05);
+    }
+    .foot-row {
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    }
+    .foot-logo { display: flex; align-items: center; gap: 7px; text-decoration: none; }
+    .foot-copy { font-size: 12px; color: rgba(255,255,255,.18); }
+    .foot-links { display: flex; gap: 16px; }
+    .foot-links a {
+      font-size: 12px; color: rgba(255,255,255,.26);
+      text-decoration: none; transition: color .12s;
+    }
+    .foot-links a:hover { color: rgba(255,255,255,.6); }
+
+    @media (max-width: 768px) {
+      .topnav { padding: 0 20px; }
+      .tn-links a { font-size: 11px; padding: 6px 7px; }
+      .page-wrap { padding: 40px 24px 60px; }
+      .foot { padding: 20px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index-v2.html" class="tn-logo">
+    <svg height="22" viewBox="0 0 224.5 220" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#F26419" d="m147.83,110c0,9.9-4.01,18.85-10.5,25.34-6.48,6.48-15.44,10.5-25.34,10.5s-18.85-4.01-25.34-10.5c-6.48-6.48-10.5-15.44-10.5-25.34s4.01-18.85,10.5-25.34c6.48-6.48,15.44-10.5,25.34-10.5s18.85,4.01,25.34,10.5c6.48,6.48,10.5,15.44,10.5,25.34Z"/>
+      <path fill="#F26419" d="m112,183.32c-19.58,0-38-7.63-51.84-21.48-13.85-13.85-21.47-32.26-21.47-51.84s7.63-38,21.47-51.85c13.85-13.85,32.26-21.47,51.84-21.47s38,7.63,51.84,21.47l-18.54,18.54c-8.9-8.9-20.72-13.8-33.31-13.8s-24.41,4.9-33.3,13.8c-8.9,8.9-13.8,20.72-13.8,33.3s4.9,24.41,13.8,33.3c8.9,8.9,20.72,13.8,33.3,13.8s24.41-4.9,33.3-13.79l18.54,18.54c-13.85,13.85-32.26,21.48-51.85,21.48Z"/>
+      <path fill="#F26419" d="m112,220.28c-29.46,0-57.15-11.47-77.98-32.3C13.19,167.15,1.72,139.46,1.72,110h27.71c0,22.05,8.59,42.79,24.18,58.38,15.59,15.59,36.33,24.18,58.38,24.18s42.79-8.59,58.38-24.18c15.59-15.59,24.18-36.33,24.18-58.38s-8.59-42.79-24.18-58.38c-15.6-15.59-36.33-24.18-58.38-24.18V-.28c29.46,0,57.15,11.47,77.98,32.3,20.83,20.83,32.3,48.52,32.3,77.98s-11.47,57.15-32.3,77.98c-20.83,20.83-48.52,32.3-77.98,32.3Z"/>
+    </svg>
+    <span class="tn-logo-name">Cloudexe</span>
+  </a>
+  <div class="tn-links">
+    <a href="index-v2.html#technology">Technology</a>
+    <a href="index-v2.html#devcloud">Cloud Platform</a>
+    <a href="index-v2.html#onprem">Self-hosted</a>
+    <a href="pricing.html" class="active">Pricing</a>
+    <a href="index-v2.html#demo">Demo</a>
+  </div>
+  <div class="tn-cta"><a href="index-v2.html#cta">Get access &rarr;</a></div>
+</nav>
+
+<main>
+  <div class="page-wrap">
+
+    <span class="label">Pricing</span>
+    <h1 class="page-title">Price &amp; ROI estimate</h1>
+    <p class="page-sub">Adjust the inputs to model your team&rsquo;s costs and expected savings.</p>
+
+    <div class="section-hd">DevCloud pricing</div>
+    <div class="embed-wrap">
+      <iframe
+        width="700" height="450" scrolling="no"
+        src="https://cloudexetech-my.sharepoint.com/personal/makarand_cloudexe_tech/_layouts/15/Doc.aspx?sourcedoc={2a41d301-4be6-4b5a-8d07-dc645270876a}&action=embedview&wdAllowInteractivity=False&AllowTyping=True&ActiveCell='Estimate'!F7&Item='Estimate'!B6%3AG25&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True&edaebf=rslc0"
+        title="Cost estimate"
+      ></iframe>
+    </div>
+
+    <div class="section-hd">ROI for DevCloud</div>
+    <div class="embed-wrap">
+      <iframe
+        width="588" height="135" scrolling="no"
+        src="https://cloudexetech-my.sharepoint.com/personal/makarand_cloudexe_tech/_layouts/15/Doc.aspx?sourcedoc={2a41d301-4be6-4b5a-8d07-dc645270876a}&action=embedview&wdAllowInteractivity=False&AllowTyping=True&ActiveCell='Estimate'!D28&Item='Estimate'!A27%3AE31&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True&edaebf=rslc0"
+        title="ROI estimate"
+      ></iframe>
+    </div>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="foot-row">
+    <a href="index-v2.html" class="foot-logo">
+      <svg height="18" viewBox="0 0 224.5 220" xmlns="http://www.w3.org/2000/svg" style="opacity:.5;filter:brightness(10)">
+        <path fill="#F26419" d="m147.83,110c0,9.9-4.01,18.85-10.5,25.34-6.48,6.48-15.44,10.5-25.34,10.5s-18.85-4.01-25.34-10.5c-6.48-6.48-10.5-15.44-10.5-25.34s4.01-18.85,10.5-25.34c6.48-6.48,15.44-10.5,25.34-10.5s18.85,4.01,25.34,10.5c6.48,6.48,10.5,15.44,10.5,25.34Z"/>
+        <path fill="#F26419" d="m112,183.32c-19.58,0-38-7.63-51.84-21.48-13.85-13.85-21.47-32.26-21.47-51.84s7.63-38,21.47-51.85c13.85-13.85,32.26-21.47,51.84-21.47s38,7.63,51.84,21.47l-18.54,18.54c-8.9-8.9-20.72-13.8-33.31-13.8s-24.41,4.9-33.3,13.8c-8.9,8.9-13.8,20.72-13.8,33.3s4.9,24.41,13.8,33.3c8.9,8.9,20.72,13.8,33.3,13.8s24.41-4.9,33.3-13.79l18.54,18.54c-13.85,13.85-32.26,21.48-51.85,21.48Z"/>
+        <path fill="#F26419" d="m112,220.28c-29.46,0-57.15-11.47-77.98-32.3C13.19,167.15,1.72,139.46,1.72,110h27.71c0,22.05,8.59,42.79,24.18,58.38,15.59,15.59,36.33,24.18,58.38,24.18s42.79-8.59,58.38-24.18c15.59-15.59,24.18-36.33,24.18-58.38s-8.59-42.79-24.18-58.38c-15.6-15.59-36.33-24.18-58.38-24.18V-.28c29.46,0,57.15,11.47,77.98,32.3,20.83,20.83,32.3,48.52,32.3,77.98s-11.47,57.15-32.3,77.98c-20.83,20.83-48.52,32.3-77.98,32.3Z"/>
+      </svg>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.35)">Cloudexe</span>
+    </a>
+    <span class="foot-copy">&copy; 2025 Cloudexe Inc.</span>
+    <div class="foot-links">
+      <a href="/privacy.html">Privacy</a>
+      <a href="mailto:info@cloudexe.tech">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
