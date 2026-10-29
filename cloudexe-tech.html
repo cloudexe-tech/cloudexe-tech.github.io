@@ -149,11 +149,12 @@
 
     /* ── Product pages ── */
     .pc-header { display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid var(--line); }
-    .pc-header-body { flex:1; min-width:0; }
+    .pc-header-body { flex:1 1 280px; min-width:0; } /* 280px basis lets the buttons wrap below on narrow screens */
     .pc-header .label { margin-bottom: 8px; }
     .pc-header .product-links { margin-top: 0; }
     .pc-bullets { display:flex; flex-direction:column; gap:6px; margin-top:10px; }
     .pc-bullet { display:flex; align-items:center; gap:8px; font-size:14px; color:var(--mid); }
+    .pc-bullet svg { flex-shrink:0; }
     .pc-cols { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
     .pc-cols .product-sub { margin-bottom: 0; }
 
@@ -206,6 +207,15 @@
     .cta-body-text strong { color:var(--ink); }
     .cta-body-text .accent { color:var(--orange); font-weight:600; }
     .btn-self { align-self: flex-start; }
+
+    /* ── Blogs ── */
+    .blogs-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; }
+    .blog-card { display:flex; flex-direction:column; text-decoration:none; }
+    .blog-meta { font-size:12.5px; font-weight:700; letter-spacing:.8px; text-transform:uppercase; color:var(--orange); }
+    .blog-card h3 { margin-top:12px; font-size:20px; font-weight:700; line-height:1.35; color:var(--ink); }
+    .blog-card p { margin-top:10px; font-size:16px; line-height:1.65; color:var(--mid); }
+    .blog-card .read-more { margin-top:auto; padding-top:18px; font-size:15px; font-weight:600; color:var(--orange); }
+    .blog-card:hover .read-more { text-decoration:underline; }
 
     /* ── About us ── */
     .about-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin-top:32px; }
@@ -298,6 +308,7 @@
       width: min(1100px, 92vw); max-width: none; max-height: none;
     }
     .video-modal::backdrop { background: rgba(17,17,16,.82); }
+    .video-modal img { display: block; width: 100%; max-height: 85vh; object-fit: contain; border-radius: 10px; background: #fff; }
     .video-modal video { display: block; width: 100%; max-height: 85vh; border-radius: 10px; background: #000; }
     .video-close {
       position: absolute; top: 8px; right: 8px; z-index: 1;
@@ -305,11 +316,6 @@
       background: rgba(0,0,0,.6); color: #fff; font-size: 22px; line-height: 1; cursor: pointer;
     }
     .video-close:hover { background: rgba(0,0,0,.85); }
-    .founder-note {
-      margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line);
-      font-size: clamp(12.5px, 0.98vw, 15px); color: var(--dim);
-      line-height: 1.65; max-width: 420px;
-    }
     /* shared orange eyebrow label used across home page */
     .whether-heading,
     .benefits-label,
@@ -415,13 +421,22 @@
 
     @media (max-width: 768px) {
       /* General layout */
-      .topnav { padding: 0 20px; }
-      .tn-links { gap: 0; }
-      .tn-links a { font-size: 12.5px; padding: 6px 7px; }
+      /* Nav: logo + CTA on top, links on a second, swipeable row */
+      .topnav { padding: 0 20px; height: auto; flex-wrap: wrap; }
+      .tn-logo { height: var(--nav-h); }
+      .tn-cta { margin-left: auto; }
+      .tn-links {
+        order: 3; flex-basis: 100%; gap: 0; margin: 0 -20px 0 -5px; padding-bottom: 8px;
+        overflow-x: auto; scrollbar-width: none;
+      }
+      .tn-links::-webkit-scrollbar { display: none; }
+      .tn-links a { font-size: 13.5px; padding: 6px 5px; }
+      section[id] { scroll-margin-top: 40px; } /* clear the taller two-row nav on anchor jumps */
       .sec, .sec-tint { padding: 48px 24px; }
       .two-up { grid-template-columns: 1fr; }
       .cta-grid { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; }
+      .blogs-grid { grid-template-columns: 1fr; }
       .prob-bridge { flex-direction: column; }
       .bridge-arrow { transform: rotate(90deg); padding: 4px 0; align-self: center; }
       .pc-cols { grid-template-columns: 1fr; }
@@ -437,8 +452,7 @@
       .home-page h1 { letter-spacing: -1.5px; margin-bottom: 14px; }
       .hero-label { margin-bottom: 14px; }
       .hero-sub { margin-bottom: 24px; max-width: 100%; }
-      .founder-note { max-width: 100%; margin-top: 24px; padding-top: 20px; }
-      .home-page footer { padding: 14px 20px; flex-direction: column; align-items: flex-start; gap: 4px; }
+        .home-page footer { padding: 14px 20px; flex-direction: column; align-items: flex-start; gap: 4px; }
     }
   </style>
 </head>
@@ -456,10 +470,10 @@
   <div class="tn-links">
 
     <a href="#technology">Technology</a>
-    <a href="#hyperbridge">Cythos</a>
+    <a href="#cythos">Cythos</a>
     <a href="#devcloud">DevCloud</a>
     <a href="#pricing">Pricing</a>
-    <a href="#demo">Demo</a>
+    <a href="#blogs">Blogs</a>
     <a href="#about">About</a>
 
   </div>
@@ -482,11 +496,8 @@
 
         <div class="hero-btns">
           <a href="mailto:hello@cloudexe.tech?subject=Let%27s%20Talk" class="hero-btn">Get in Touch</a>
-          <button type="button" class="hero-btn hero-btn-outline" id="see-demo">&#9654; See Demo</button>
+          <button type="button" class="hero-btn hero-btn-outline" data-demo>&#9654; See Demo</button>
         </div>
-
-        <p class="hero-label" style="margin-top:28px;padding-top:24px;border-top:1px solid var(--line);margin-bottom:8px;animation:none">About us</p>
-        <p class="founder-note" style="margin-top:0;padding-top:0;border-top:none">We are a startup based in Silicon Valley. The founding team led iconic GPU programs at NVIDIA, Intel, and Google, shipping the first CUDA GPU, the first ARC GPU, and the core tech behind Google Stadia (cloud gaming platform). <a href="#about" style="color:var(--orange);font-weight:600;text-decoration:none">Meet the team &rarr;</a></p>
       </div>
 
       <!-- Right: Whether + Benefits + Logos -->
@@ -585,14 +596,14 @@
 
   <!-- Page: On-Prem -->
   <div class="page">
-    <section class="sec-tint" id="hyperbridge">
+    <section class="sec-tint" id="cythos">
       <span class="label">Products</span>
       <h1 class="hero-s"><b>Cythos</b>: GPUs in your VPC</h1>
       <div class="card product-card">
         <div class="pc-header">
           <div class="pc-header-body">
             <div class="label">For enterprises using hyperscaler GPUs</div>
-            <div class="product-name">Cloudexe Hyperbridge</div>
+            <div class="product-name">Cloudexe Cythos</div>
             <div class="pc-bullets">
               <div class="pc-bullet">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="10" rx="1.5" stroke="#F26419" stroke-width="1.3"/><line x1="1" y1="5.5" x2="13" y2="5.5" stroke="#F26419" stroke-width="1.2"/><line x1="4" y1="8" x2="10" y2="8" stroke="#F26419" stroke-width="1.2" stroke-linecap="round"/><line x1="4" y1="10" x2="8" y2="10" stroke="#F26419" stroke-width="1.2" stroke-linecap="round"/></svg>
@@ -827,7 +838,7 @@
           </div>
           <div class="product-links">
             <a href="#cta" class="btn btn-primary btn-sm">Get access</a>
-            <a href="#demo" class="btn btn-outline btn-sm">See demo</a>
+            <button type="button" class="btn btn-outline btn-sm" data-demo-gif>See demo</button>
           </div>
         </div>
         <!-- Bundle diagram -->
@@ -1090,12 +1101,26 @@
     </section>
   </div>
 
-  <!-- Page: Demo -->
+  <!-- Page: Blogs -->
   <div class="page">
-    <section class="sec" id="demo">
-      <span class="label">Demo</span>
-      <h1 class="hero-s">See it in action</h1>
-      <img src="images/cloudcfg.gif" alt="Cloudexe demo" style="width:75%;border-radius:10px;border:1px solid var(--line);margin-top:16px;display:block;" />
+    <section class="sec" id="blogs">
+      <span class="label">Blogs</span>
+      <h1 class="hero-s">What we're thinking about</h1>
+      <p class="page-intro">Notes on inference infrastructure, confidential computing, and the economics of compute placement.</p>
+      <div class="blogs-grid">
+        <a class="card blog-card" href="https://makaranddharmapurikar.substack.com/p/trust-only-when-you-cant-verify" target="_blank" rel="noopener">
+          <div class="blog-meta">Sep 29, 2026 &middot; Makarand Dharmapurikar</div>
+          <h3>Trust Only When You Can't Verify</h3>
+          <p>Trust, But Verify was good advice during the cold war. What does it mean today, when AI handles our most valuable data?</p>
+          <div class="read-more">Read on Substack &rarr;</div>
+        </a>
+        <a class="card blog-card" href="https://makaranddharmapurikar.substack.com/p/decisions-outlive-their-reasons" target="_blank" rel="noopener">
+          <div class="blog-meta">Sep 10, 2026 &middot; Makarand Dharmapurikar</div>
+          <h3>Decisions outlive their reasons</h3>
+          <p>Inference infrastructure improves every few weeks, in unpredictable ways. Institutional workflows change over years.</p>
+          <div class="read-more">Read on Substack &rarr;</div>
+        </a>
+      </div>
     </section>
   </div>
 
@@ -1140,7 +1165,7 @@
 
   <!-- Page: CTA -->
   <div class="page">
-    <section class="sec-tint" id="cta">
+    <section class="sec" id="cta">
       <span class="label">Get Access</span>
       <h1 class="hero-s">Start using Cloudexe today</h1>
       <div class="cta-grid">
@@ -1170,6 +1195,11 @@
   <video id="demo-video" controls playsinline preload="none" src="images/migrating-hyperscaler.mp4"></video>
 </dialog>
 
+<dialog class="video-modal" id="gif-modal" aria-label="DevCloud demo">
+  <button type="button" class="video-close" aria-label="Close demo">&times;</button>
+  <img id="gif-img" alt="DevCloud demo" />
+</dialog>
+
 <script>
 (function () {
   const io = new IntersectionObserver(entries => {
@@ -1184,14 +1214,24 @@
 (function () {
   const modal = document.getElementById('demo-modal');
   const video = document.getElementById('demo-video');
-  document.getElementById('see-demo').addEventListener('click', () => {
+  document.querySelectorAll('[data-demo]').forEach(btn => btn.addEventListener('click', () => {
     modal.showModal();
     video.play().catch(() => {});
-  });
+  }));
   document.getElementById('demo-close').addEventListener('click', () => modal.close());
   // Clicking the backdrop (outside the video) closes too.
   modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
   modal.addEventListener('close', () => video.pause());
+
+  // DevCloud demo is the older GIF; src is set on first open so it doesn't load with the page.
+  const gifModal = document.getElementById('gif-modal');
+  const gif = document.getElementById('gif-img');
+  document.querySelectorAll('[data-demo-gif]').forEach(btn => btn.addEventListener('click', () => {
+    if (!gif.src) gif.src = 'images/cloudcfg.gif';
+    gifModal.showModal();
+  }));
+  gifModal.querySelector('.video-close').addEventListener('click', () => gifModal.close());
+  gifModal.addEventListener('click', e => { if (e.target === gifModal) gifModal.close(); });
 })();
 </script>
 </body>
