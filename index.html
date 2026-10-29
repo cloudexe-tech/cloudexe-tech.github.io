@@ -175,7 +175,7 @@
     .bridge-intro { margin-top:0; font-size:17px; }
 
     /* ── Pricing ── */
-    .pricing-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; max-width:1100px; }
+    .pricing-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:1100px; }
     .pricing-card { padding: 28px 28px 24px; }
     .pricing-card-hi { border-color: var(--orange); }
     .pricing-hd { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:20px; }
@@ -188,6 +188,7 @@
     .gpu-name { font-size:14px; font-weight:600; color:var(--ink); }
     .gpu-spec { font-size:12.5px; color:var(--dim); }
     .price-val { font-size:20px; font-weight:700; color:var(--ink); }
+    .price-from { font-size:14px; font-weight:500; color:var(--mid); }
     .price-unit { font-size:14px; font-weight:500; color:var(--mid); }
     .ent-bullets { border-top:1px solid var(--line); padding-top:16px; display:flex; flex-direction:column; gap:12px; }
     .ent-bullet { display:flex; gap:10px; align-items:flex-start; }
@@ -497,7 +498,7 @@
     <a href="#about">About</a>
 
   </div>
-  <div class="tn-cta"><a href="#cta">Get access &rarr;</a></div>
+  <div class="tn-cta"><a href="#about">Get access &rarr;</a></div>
 </nav>
 
 <main>
@@ -650,7 +651,7 @@
             </div>
           </div>
           <div class="product-links">
-            <a href="#cta" class="btn btn-primary btn-sm">Setup a call</a>
+            <a href="#about" class="btn btn-primary btn-sm">Setup a call</a>
           </div>
         </div>
         <!-- Bundle diagram -->
@@ -867,7 +868,7 @@
             </div>
           </div>
           <div class="product-links">
-            <a href="#cta" class="btn btn-primary btn-sm">Get access</a>
+            <a href="#about" class="btn btn-primary btn-sm">Get access</a>
             <button type="button" class="btn btn-outline btn-sm" data-demo-gif>See demo</button>
           </div>
         </div>
@@ -1042,39 +1043,12 @@
 
       <div class="pricing-grid">
 
-        <!-- Spot Hours -->
-        <div class="card pricing-card">
-          <div class="pricing-hd">
-            <div>
-              <div class="pricing-type">Spot Hours</div>
-              <div class="pricing-desc">Lowest cost. Subject to availability. Ideal for batch and overnight workloads.</div>
-            </div>
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" class="pricing-icon">
-              <path d="M11 2L13.5 8H20L14.8 11.8L16.8 18L11 14.3L5.2 18L7.2 11.8L2 8H8.5L11 2Z" stroke="#F26419" stroke-width="1.5" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="pricing-rows">
-            <div class="pricing-row">
-              <div><div class="gpu-name">H100</div><div class="gpu-spec">80 GB HBM3</div></div>
-              <div class="price-val">$1.75<span class="price-unit">/GPU-hr</span></div>
-            </div>
-            <div class="pricing-row">
-              <div><div class="gpu-name">H200</div><div class="gpu-spec">141 GB HBM3e</div></div>
-              <div class="price-val">$2.13<span class="price-unit">/GPU-hr</span></div>
-            </div>
-            <div class="pricing-row">
-              <div><div class="gpu-name">B200</div><div class="gpu-spec">192 GB HBM3e</div></div>
-              <div class="price-val">$3.08<span class="price-unit">/GPU-hr</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- On-Demand Hours -->
+        <!-- Indicative pricing -->
         <div class="card pricing-card pricing-card-hi">
           <div class="pricing-hd">
             <div>
-              <div class="pricing-type">On-Demand Hours</div>
-              <div class="pricing-desc">Best for interactive sessions and time-sensitive jobs.</div>
+              <div class="pricing-type">Indicative pricing</div>
+              <div class="pricing-desc">On-demand GPUs for interactive sessions and time-sensitive jobs.</div>
             </div>
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" class="pricing-icon">
               <circle cx="11" cy="11" r="9" stroke="#F26419" stroke-width="1.5"/>
@@ -1084,15 +1058,19 @@
           <div class="pricing-rows">
             <div class="pricing-row">
               <div><div class="gpu-name">H100</div><div class="gpu-spec">80 GB HBM3</div></div>
-              <div class="price-val">$4.15<span class="price-unit">/GPU-hr</span></div>
+              <div class="price-val"><span class="price-from">from</span> $4.00<span class="price-unit">/GPU-hr</span></div>
             </div>
             <div class="pricing-row">
               <div><div class="gpu-name">H200</div><div class="gpu-spec">141 GB HBM3e</div></div>
-              <div class="price-val">$5.08<span class="price-unit">/GPU-hr</span></div>
+              <div class="price-val"><span class="price-from">from</span> $5.00<span class="price-unit">/GPU-hr</span></div>
             </div>
             <div class="pricing-row">
               <div><div class="gpu-name">B200</div><div class="gpu-spec">192 GB HBM3e</div></div>
-              <div class="price-val">$7.54<span class="price-unit">/GPU-hr</span></div>
+              <div class="price-val"><span class="price-from">from</span> $7.50<span class="price-unit">/GPU-hr</span></div>
+            </div>
+            <div class="pricing-row">
+              <div><div class="gpu-name">B300</div><div class="gpu-spec">288 GB HBM3e</div></div>
+              <div class="price-val"><span class="price-from">from</span> $8.00<span class="price-unit">/GPU-hr</span></div>
             </div>
           </div>
         </div>
@@ -1118,14 +1096,14 @@
             </div>
           </div>
           <div class="ent-cta">
-            <a href="#cta" class="btn btn-outline btn-sm btn-block">Reach out to us</a>
+            <a href="#about" class="btn btn-outline btn-sm btn-block">Reach out to us</a>
           </div>
         </div>
 
       </div>
 
       <div class="pricing-footer">
-        <a href="#cta" class="btn btn-primary btn-sm">Get access</a>
+        <a href="#about" class="btn btn-primary btn-sm">Get access</a>
         <span class="pricing-note">Prices shown per GPU-hour, billed per second of workload execution.</span>
       </div>
     </section>
@@ -1189,30 +1167,6 @@
               <a class="linkedin" href="https://www.linkedin.com/in/siddharth-swarup-290471/" target="_blank" rel="noopener">LinkedIn</a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Page: CTA -->
-  <div class="page">
-    <section class="sec" id="cta">
-      <span class="label">Get Access</span>
-      <h1 class="hero-s">Start using Cloudexe today</h1>
-      <div class="cta-grid">
-        <div class="card cta-card-flex">
-          <div>
-            <div class="prob-tag prob-tag-lg">Academic Researcher</div>
-            <div class="cta-body-text">Academic researchers with a <strong>.edu email address</strong> can join our grant program. <span class="accent">You pay 20%, we cover 80%.</span></div>
-          </div>
-          <a href="https://forms.office.com/r/H9fDZSBmrw" class="btn btn-primary btn-self">Join grant program &rarr;</a>
-        </div>
-        <div class="card cta-card-flex">
-          <div>
-            <div class="prob-tag prob-tag-lg">Enterprise</div>
-            <div class="cta-body-text">Set up a call with us to discuss your team&rsquo;s requirements, pricing, and deployment options.</div>
-          </div>
-          <a href="mailto:info@cloudexe.tech" class="btn btn-outline btn-self">Setup a call &rarr;</a>
         </div>
       </div>
     </section>
